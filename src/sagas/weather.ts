@@ -1,14 +1,15 @@
 import {
   put,
   takeEvery,
-  call,
+  apply
 } from 'redux-saga/effects'
 import * as A from '../actions/weather'
-import { IAction } from '../types/actions'
+import { IWeatherRequest } from '../types/actions'
+import { api } from '../helpers/api'
 
-export function* handlerWeatherRequest(action: IAction) {
+export function* handlerWeatherRequest(action: IWeatherRequest) {
   try {
-    const response = yield call(fetchmock, 'london')
+    const response: IWeatherResponse = yield apply(api, api.get, [action.payload.city])
 
     yield put({
       type: A.WEATHER_SUCCESS,
@@ -31,27 +32,7 @@ export function* watchWeatherRequest() {
   yield takeEvery(A.WEATHER_REQUEST, handlerWeatherRequest)
 }
 
-interface IWeather {
-  temperature: string;
-  pressure: string;
-  wind: string;
-}
-
 interface IWeatherResponse {
   status: number;
-  data: IWeather;
-  errorMsg?: string;
-}
-
-const fetchmock = (city: string): Promise<IWeatherResponse> => {
-  return new Promise((resolve) => {
-    resolve({
-      status: 200,
-      data: {
-        temperature: '23',
-        pressure: '122',
-        wind: '11'
-      }
-    })
-  })
+  data: object;
 }
