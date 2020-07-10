@@ -17,7 +17,7 @@ class Api implements IApi {
   })
 
   get = (city: string): Promise<any> => {
-    return this._tmp.get(`weather?q=${city}&appid=${this.key}`)
+    return this._tmp.get(`weather?q=${city}&units=metric&lang=ru&appid=${this.key}`)
   }
 }
 

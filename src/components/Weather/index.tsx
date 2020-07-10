@@ -1,8 +1,11 @@
 import React, { SyntheticEvent } from 'react'
 import s from './index.module.scss'
 import { PropsFromRedux } from '../../containers/WeatherContainer'
+import { WeatherItem } from '../WeatherItem'
+import { isEmpty } from '../../helpers/isEmpty'
+import { isObject } from 'util'
 
-export const Weather: React.FC<PropsFromRedux> = ({ getWeather }) => {
+export const Weather: React.FC<PropsFromRedux> = ({ getWeather, data }) => {
 
   const [searchValue, setSearchValue] = React.useState<string>('')
 
@@ -28,6 +31,7 @@ export const Weather: React.FC<PropsFromRedux> = ({ getWeather }) => {
         />
         <button type="submit">Search</button>
       </form>
+      {/* {isObject(data) ? null : <WeatherItem data={data} />} */}
     </section>
   )
 }

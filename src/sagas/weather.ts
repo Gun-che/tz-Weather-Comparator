@@ -4,10 +4,10 @@ import {
   apply
 } from 'redux-saga/effects'
 import * as A from '../actions/weather'
-import { IWeatherAction } from '../types/actions'
+import { IWeatherRequest } from '../types/actions'
 import { api } from '../helpers/api'
 
-export function* handlerWeatherRequest(action: IWeatherAction) {
+export function* handlerWeatherRequest(action: IWeatherRequest) {
   try {
     const response: IWeatherResponse = yield apply(api, api.get, [action.payload.city])
 
@@ -30,12 +30,6 @@ export function* handlerWeatherRequest(action: IWeatherAction) {
 export function* watchWeatherRequest() {
 
   yield takeEvery(A.WEATHER_REQUEST, handlerWeatherRequest)
-}
-
-interface IWeather {
-  temperature: string;
-  pressure: string;
-  wind: string;
 }
 
 interface IWeatherResponse {
