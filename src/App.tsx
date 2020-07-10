@@ -13,11 +13,9 @@ const Home = loadable(() => import('./components/HomePage'), {
   fallback: LoadingConst,
 })
 
-const Weather = loadable(() => import('./components/Weather'), {
+const Weather = loadable(() => import('./containers/WeatherContainer'), {
   fallback: LoadingConst,
 })
-
-
 
 const App: React.FC = () => {
   return (

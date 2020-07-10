@@ -8,3 +8,7 @@ export interface IWeatherState extends IState {
   data: object;
   timestamp: Date;
 }
+
+export interface IStoreState {
+  weather: IWeatherState
+}
