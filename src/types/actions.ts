@@ -7,3 +7,7 @@ export interface IWeatherRequestArgs {
   city: string;
   country?: string;
 }
+
+export interface IWeatherAction extends IAction {
+  payload: IWeatherRequestArgs,
+}
