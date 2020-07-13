@@ -1,13 +1,16 @@
+
 interface IState {
   isFetching: boolean;
   message: string;
+  code: number;
 }
 
 export interface IWeatherState extends IState {
-  city: string;
-  data?: IWeatherData;
+  data: IWeatherData[];
   timestamp: Date;
 }
+
+export interface IWCState extends IWeatherState { }
 
 
 export interface IWeatherData {
@@ -32,5 +35,6 @@ interface IWeatherMain {
 }
 
 export interface IStoreState {
-  weather: IWeatherState
+  weather: IWeatherState,
+  wc: IWeatherState,
 }

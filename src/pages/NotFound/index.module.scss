@@ -5,6 +5,7 @@
   font-size: 200px;
   position: relative;
   font-weight: 700;
+  text-align: center;
   h3 {
     position: absolute;
     left: 0;
@@ -13,6 +14,5 @@
     margin: 0;
     width: 100%;
     color: $dark;
-    text-align: center;
   }
 }

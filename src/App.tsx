@@ -17,6 +17,14 @@ const Weather = loadable(() => import('./containers/WeatherContainer'), {
   fallback: LoadingConst,
 })
 
+const NotFound = loadable(() => import('./pages/NotFound'), {
+  fallback: LoadingConst,
+})
+
+const WeatherComparator = loadable(() => import('./containers/WeatherComparatorContainer'), {
+  fallback: LoadingConst,
+})
+
 const App: React.FC = () => {
   return (
     <Router>
@@ -27,6 +35,12 @@ const App: React.FC = () => {
         </Route>
         <Route path="/weather">
           <Weather />
+        </Route>
+        <Route path="/wc">
+          <WeatherComparator />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </Router>

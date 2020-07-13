@@ -10,6 +10,15 @@ export interface IWeatherRequestArgs {
   country?: string;
 }
 
+export interface IWeatherComparatorRequestArgs {
+  city1: string;
+  city2: string;
+}
+
+export interface IWeatherComparatorRequest extends IAction {
+  payload: IWeatherComparatorRequestArgs,
+}
+
 export interface IWeatherRequest extends IAction {
   payload: IWeatherRequestArgs,
 }
