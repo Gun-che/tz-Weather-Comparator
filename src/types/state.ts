@@ -5,7 +5,7 @@ interface IState {
 
 export interface IWeatherState extends IState {
   city: string;
-  data?: IWeatherData;
+  data: IWeatherData[];
   timestamp: Date;
 }
 

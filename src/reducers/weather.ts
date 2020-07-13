@@ -3,7 +3,7 @@ import { IWeatherState } from '../types/state'
 
 export const initState: IWeatherState = {
   city: '',
-  data: null,
+  data: [],
   timestamp: new Date(),
   isFetching: false,
   message: '',
@@ -26,7 +26,7 @@ export function weatherReducer(
       return {
         ...state,
         isFetching: false,
-        data: action.payload.data
+        data: [action.payload.data]
       }
 
     case A.WEATHER_FAILURE:

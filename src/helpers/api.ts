@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+export const baseIconUrl = 'http://openweathermap.org/img/wn/';
 
 interface IApi {
   get(city: string): Promise<any>,

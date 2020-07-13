@@ -2,8 +2,6 @@ import React, { SyntheticEvent } from 'react'
 import s from './index.module.scss'
 import { PropsFromRedux } from '../../containers/WeatherContainer'
 import { WeatherItem } from '../WeatherItem'
-import { isEmpty } from '../../helpers/isEmpty'
-import { isObject } from 'util'
 
 export const Weather: React.FC<PropsFromRedux> = ({ getWeather, data }) => {
 
@@ -31,7 +29,7 @@ export const Weather: React.FC<PropsFromRedux> = ({ getWeather, data }) => {
         />
         <button type="submit">Search</button>
       </form>
-      {/* {isObject(data) ? null : <WeatherItem data={data} />} */}
+      {data.length ? <WeatherItem data={data[0]} /> : null}
     </section>
   )
 }
