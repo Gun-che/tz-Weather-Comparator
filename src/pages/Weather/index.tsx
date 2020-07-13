@@ -1,10 +1,15 @@
 import React, { SyntheticEvent } from 'react'
 import s from './index.module.scss'
 import { PropsFromRedux } from '../../containers/WeatherContainer'
-import { WeatherItem } from '../WeatherItem'
+import { WeatherItem } from '../../components/WeatherItem'
 import { errorMsg } from '../../helpers/messages'
 
-export const Weather: React.FC<PropsFromRedux> = ({ getWeather, data, message, code }) => {
+export const Weather: React.FC<PropsFromRedux> = ({
+  getWeather,
+  data,
+  message,
+  code
+}) => {
 
   const [searchValue, setSearchValue] = React.useState<string>('')
   const [formMessage, setFormMessage] = React.useState<string>('')

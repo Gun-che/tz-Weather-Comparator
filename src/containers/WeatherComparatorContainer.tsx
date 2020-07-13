@@ -1,30 +1,25 @@
 import React, { Dispatch } from 'react'
 import { connect, ConnectedProps } from 'react-redux'
 import { IStoreState } from '../types/state'
-import { createWeatherRequest } from '../actions/weather'
-import { IAction, IWeatherRequestArgs } from '../types/actions'
-import Weather from '../pages/Weather'
+import { createWCRequest } from '../actions/wc'
+import { IAction, IWeatherComparatorRequestArgs } from '../types/actions'
+import { WeatherComparator } from '../pages/WeatherComparator'
 
 
 const mapStateToProps = (state: IStoreState) => ({
-  data: state.weather.data,
-  isFetching: state.weather.isFetching,
-  message: state.weather.message,
-  code: state.weather.code,
+  data: state.wc.data,
+  isFetching: state.wc.isFetching,
+  message: state.wc.message,
+  code: state.wc.code,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => ({
-  getWeather: (data: IWeatherRequestArgs) => dispatch(createWeatherRequest(data)),
+  getWeather: (data: IWeatherComparatorRequestArgs) => dispatch(createWCRequest(data)),
 })
 
 const connector = connect(mapStateToProps, mapDispatchToProps)
 
 export type PropsFromRedux = ConnectedProps<typeof connector>
-// type Props = PropsFromRedux & {background?: string}
-// or
-// interface IProps extends ConnectedProps<typeof connector> {
-//   background?: string;
-// } 
 
 export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
   getWeather,
@@ -35,7 +30,7 @@ export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
 }) => {
   return (
     <div>
-      <Weather
+      <WeatherComparator
         getWeather={getWeather}
         data={data}
         isFetching={isFetching}

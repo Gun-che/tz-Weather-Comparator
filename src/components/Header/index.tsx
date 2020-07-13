@@ -14,6 +14,7 @@ export const Header: React.FC = () => {
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/weather">Weather</Link></li>
+            <li><Link to="/wc">Weather Comparator</Link></li>
             <li><a href="/sdsd">JavaScript</a></li>
           </ul>
         </div>

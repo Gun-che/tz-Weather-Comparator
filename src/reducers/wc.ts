@@ -1,7 +1,7 @@
-import * as A from '../actions/weather'
-import { IWeatherState } from '../types/state'
+import * as A from '../actions/wc'
+import { IWCState } from '../types/state'
 
-export const initState: IWeatherState = {
+export const initState: IWCState = {
   data: [],
   timestamp: new Date(),
   isFetching: false,
@@ -9,13 +9,13 @@ export const initState: IWeatherState = {
   code: 0,
 }
 
-export function weatherReducer(
-  state: IWeatherState = initState,
+export function weatherComparatorReducer(
+  state: IWCState = initState,
   action: any
-): IWeatherState {
+): IWCState {
 
   switch (action.type) {
-    case A.WEATHER_REQUEST:
+    case A.WEATHER_COMPARATOR_REQUEST:
       return {
         ...state,
         isFetching: true,
@@ -23,14 +23,14 @@ export function weatherReducer(
         code: 0,
       }
 
-    case A.WEATHER_SUCCESS:
+    case A.WEATHER_COMPARATOR_SUCCESS:
       return {
         ...state,
         isFetching: false,
-        data: [action.payload.data]
+        data: action.payload.data
       }
 
-    case A.WEATHER_FAILURE:
+    case A.WEATHER_COMPARATOR_FAILURE:
       return {
         ...state,
         isFetching: false,
