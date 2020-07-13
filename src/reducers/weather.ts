@@ -7,6 +7,7 @@ export const initState: IWeatherState = {
   timestamp: new Date(),
   isFetching: false,
   message: '',
+  code: 0,
 }
 
 export function weatherReducer(
@@ -19,7 +20,8 @@ export function weatherReducer(
       return {
         ...state,
         isFetching: true,
-        message: ''
+        message: '',
+        code: 0,
       }
 
     case A.WEATHER_SUCCESS:
@@ -33,7 +35,8 @@ export function weatherReducer(
       return {
         ...state,
         isFetching: false,
-        message: action.payload.message
+        code: action.payload.response.status,
+        message: action.payload.message,
       }
 
     default:

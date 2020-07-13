@@ -1,6 +1,7 @@
 interface IState {
   isFetching: boolean;
   message: string;
+  code: number;
 }
 
 export interface IWeatherState extends IState {

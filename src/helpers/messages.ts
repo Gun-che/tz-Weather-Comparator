@@ -4,13 +4,23 @@ type IMsgItem = {
 }
 
 interface IMsgs {
-  [key: number]: IMsgItem
+  [key: number]: IMsgItem;
+  [key: string]: IMsgItem;
+
 }
 
 export const errorMsg: IMsgs = {
   404: {
     ru: 'данного города нет в списке, пожалуйста, уточните запрос',
     en: 'thunderstorm with light rain'
+  },
+  400: {
+    ru: 'Плохой запрос',
+    en: 'Bad Request'
+  },
+  empty: {
+    ru: 'Введите название города!',
+    en: 'Enter the name of the city!'
   }
 }
 

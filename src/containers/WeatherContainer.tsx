@@ -11,6 +11,7 @@ const mapStateToProps = (state: IStoreState) => ({
   data: state.weather.data,
   isFetching: state.weather.isFetching,
   message: state.weather.message,
+  code: state.weather.code,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => ({
@@ -32,16 +33,17 @@ export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
   data,
   isFetching,
   message,
+  code,
 }) => {
   return (
     <div>
-      <button onClick={() => getWeather({ city: 'london' })}>click</button>
       <Weather
         city={city}
         getWeather={getWeather}
         data={data}
         isFetching={isFetching}
         message={message}
+        code={code}
       />
     </div>
   )
