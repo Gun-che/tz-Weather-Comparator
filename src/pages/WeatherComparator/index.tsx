@@ -2,8 +2,8 @@ import React, { SyntheticEvent, ChangeEvent } from 'react'
 import { PropsFromRedux } from '../../containers/WeatherComparatorContainer'
 import s from './index.module.scss'
 import { errorMsg } from '../../helpers/messages'
-import { WeatherItem } from '../../components/WeatherItem'
 import { ComparisonField } from '../../components/ComparisonField'
+import { WeatherCard } from '../../components/WeatherCard'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -41,6 +41,15 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
     setSities([...cities, ''])
   }
 
+  const tmpGridClass = (): string => {
+    if (data.length === 2 || data.length === 4) {
+      return s.two
+
+    } else {
+      return ''
+    }
+  }
+
 
   return (
     <div className={s.wrap + ' container'}>
@@ -48,13 +57,14 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
       <form onSubmit={onSubmit}>
         {cities.map((item, index) => {
           return (<div key={index}>
-            <label htmlFor="city1">{index + 1 + ' город'}</label>
+            <label htmlFor={'city' + (index + 1)}>{index + 1 + ' город'}</label>
             <input
               data-key={index}
               type="text"
               placeholder={index + 1 + ' город'}
               onChange={onChange}
-              id="city1"
+              id={'city' + (index + 1)}
+              name={'city' + (index + 1)}
               value={item}
             />
           </div>)
@@ -69,10 +79,17 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
           <i className="material-icons left">search</i>Search</button>
       </form>
       {data.length ? <div className={s.answer}>
-        <WeatherItem data={data[0]} />
         <ComparisonField data={data} />
-        <WeatherItem data={data[1]} />
       </div> : null}
+      <div className={s.grid + ' ' + tmpGridClass()}>
+        {data.map((item, index) => {
+          return (
+            <div key={index}>
+              <WeatherCard data={item} />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
