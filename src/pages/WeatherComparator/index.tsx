@@ -1,9 +1,9 @@
-import React, { SyntheticEvent } from 'react'
+import React, { SyntheticEvent, ChangeEvent } from 'react'
 import { PropsFromRedux } from '../../containers/WeatherComparatorContainer'
 import s from './index.module.scss'
 import { errorMsg } from '../../helpers/messages'
-import { WeatherItem } from '../../components/WeatherItem'
 import { ComparisonField } from '../../components/ComparisonField'
+import { WeatherCard } from '../../components/WeatherCard'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -12,15 +12,14 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
   code,
 }) => {
 
-  const [city1, setCity1] = React.useState<string>('')
-  const [city2, setCity2] = React.useState<string>('')
+  const [cities, setSities] = React.useState<string[]>(['', ''])
   const [formMessage, setFormMessage] = React.useState<string>('')
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (city1 && city2) {
-      getWeather({ city1, city2 })
+    if (!cities.includes('')) {
+      getWeather(cities)
       formMessage && setFormMessage('')
 
     } else {
@@ -28,48 +27,69 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
     }
   }
 
-  const onChange = (e: SyntheticEvent<HTMLInputElement>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement & { dataset: { key: number } }>) => {
     const target = e.currentTarget;
 
-    if (target.id === 'city1') {
-      setCity1(target.value)
+    let arr = [...cities];
+    arr[target.dataset.key] = target.value;
+    console.log()
+
+    setSities(arr)
+  }
+
+  const onAdd = (e: SyntheticEvent) => {
+    setSities([...cities, ''])
+  }
+
+  const tmpGridClass = (): string => {
+    if (data.length === 2 || data.length === 4) {
+      return s.two
 
     } else {
-      setCity2(target.value)
+      return ''
     }
-
   }
+
 
   return (
     <div className={s.wrap + ' container'}>
       <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
       <form onSubmit={onSubmit}>
-        <label htmlFor="city1">Первый город</label>
-        <input
-          type="text"
-          placeholder="Первый город"
-          onChange={onChange}
-          id="city1"
-          value={city1}
-        />
-        <label htmlFor="city2">Второй город</label>
-        <input
-          type="text"
-          placeholder="Второй город"
-          onChange={onChange}
-          id="city2"
-          value={city2}
-        />
+        {cities.map((item, index) => {
+          return (<div key={index}>
+            <label htmlFor={'city' + (index + 1)}>{index + 1 + ' город'}</label>
+            <input
+              data-key={index}
+              type="text"
+              placeholder={index + 1 + ' город'}
+              onChange={onChange}
+              id={'city' + (index + 1)}
+              name={'city' + (index + 1)}
+              value={item}
+            />
+          </div>)
+        })}
+        <button
+          onClick={onAdd}
+          className="waves-effect waves-light btn blue lighten-3">
+          <i className="material-icons left">add_location</i>Add location</button>
         <button
           type="submit"
           className="waves-effect waves-light btn blue lighten-3">
           <i className="material-icons left">search</i>Search</button>
       </form>
       {data.length ? <div className={s.answer}>
-        <WeatherItem data={data[0]} />
         <ComparisonField data={data} />
-        <WeatherItem data={data[1]} />
       </div> : null}
+      <div className={s.grid + ' ' + tmpGridClass()}>
+        {data.map((item, index) => {
+          return (
+            <div key={index}>
+              <WeatherCard data={item} />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
