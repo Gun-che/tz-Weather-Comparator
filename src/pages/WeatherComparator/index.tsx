@@ -2,8 +2,10 @@ import React, { SyntheticEvent, ChangeEvent } from 'react'
 import { PropsFromRedux } from '../../containers/WeatherComparatorContainer'
 import s from './index.module.scss'
 import { errorMsg } from '../../helpers/messages'
-import { ComparisonField } from '../../components/ComparisonField'
+import { ComparisonCard } from '../../components/ComparisonCard'
 import { WeatherCard } from '../../components/WeatherCard'
+import { CityInput } from '../../components/CityInput'
+import { ComparisonInfo } from '../../components/ComparisonInfo'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -12,14 +14,15 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
   code,
 }) => {
 
-  const [cities, setSities] = React.useState<string[]>(['', ''])
+  const [cities, setSities] = React.useState<[string, number][]>([['', 0], ['', 1]])
   const [formMessage, setFormMessage] = React.useState<string>('')
+  const [key, setKey] = React.useState<number>(2)
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!cities.includes('')) {
-      getWeather(cities)
+    if (!cities.some(i => !i[0])) {
+      getWeather(cities.map(i => i[0]))
       formMessage && setFormMessage('')
 
     } else {
@@ -27,61 +30,81 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
     }
   }
 
-  const onChange = (e: ChangeEvent<HTMLInputElement & { dataset: { key: number } }>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement & { dataset: { index: number } }>) => {
     const target = e.currentTarget;
 
     let arr = [...cities];
-    arr[target.dataset.key] = target.value;
-    console.log()
+    arr[target.dataset.index][0] = target.value;
+
+    console.log(target.dataset.index)
 
     setSities(arr)
   }
 
   const onAdd = (e: SyntheticEvent) => {
-    setSities([...cities, ''])
+    setSities([...cities, ['', key]])
+    setKey(key + 1)
   }
+
+  const onClose = (i: number): (e: SyntheticEvent) => void => e => {
+    let arr = [...cities];
+    arr.splice(i, 1);
+    setSities(arr)
+  }
+
 
   const tmpGridClass = (): string => {
     if (data.length === 2 || data.length === 4) {
       return s.two
+    }
+    if (data.length === 0) {
+      return s.empty
 
     } else {
       return ''
     }
   }
 
+  const tmpMsg = (): React.ReactElement => {
+    const fullMsg = errorMsg[code] ? errorMsg[code]['ru'] : message
+    return (
+      <>{fullMsg} {formMessage}</>
+    )
+  }
 
   return (
-    <div className={s.wrap + ' container'}>
-      <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
-      <form onSubmit={onSubmit}>
+    <div className={s.wrap + ' ' + tmpGridClass() + ' container'}>
+      <div className={s.message}>
+        <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
+        <p>{tmpMsg()}</p>
+      </div>
+      <form onSubmit={onSubmit} className={s.form}>
         {cities.map((item, index) => {
-          return (<div key={index}>
-            <label htmlFor={'city' + (index + 1)}>{index + 1 + ' город'}</label>
-            <input
-              data-key={index}
-              type="text"
-              placeholder={index + 1 + ' город'}
+          return <div key={item[1]}>
+            <CityInput
+              onClose={onClose}
+              item={item}
+              index={index}
               onChange={onChange}
-              id={'city' + (index + 1)}
-              name={'city' + (index + 1)}
-              value={item}
             />
-          </div>)
+          </div>
         })}
-        <button
-          onClick={onAdd}
-          className="waves-effect waves-light btn blue lighten-3">
-          <i className="material-icons left">add_location</i>Add location</button>
-        <button
-          type="submit"
-          className="waves-effect waves-light btn blue lighten-3">
-          <i className="material-icons left">search</i>Search</button>
+        <div className={s.btns}>
+          <button
+            onClick={onAdd}
+            className="waves-effect waves-light btn blue lighten-3">
+            <i className="material-icons left">add_location</i>Add location</button>
+          <button
+            type="submit"
+            className="waves-effect waves-light btn blue lighten-3">
+            <i className="material-icons left">search</i>Search</button>
+        </div>
       </form>
-      {data.length ? <div className={s.answer}>
-        <ComparisonField data={data} />
-      </div> : null}
-      <div className={s.grid + ' ' + tmpGridClass()}>
+      {data.length ?
+        <><ComparisonCard data={data} />
+          <div className={s.infoBlock}><ComparisonInfo data={data} /></div>
+        </> : null}
+      <div className={s.grid}>
         {data.map((item, index) => {
           return (
             <div key={index}>
