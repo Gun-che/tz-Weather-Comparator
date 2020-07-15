@@ -4,6 +4,7 @@ import s from './index.module.scss'
 import { errorMsg } from '../../helpers/messages'
 import { ComparisonField } from '../../components/ComparisonField'
 import { WeatherCard } from '../../components/WeatherCard'
+import { CityInput } from '../../components/CityInput'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -56,18 +57,11 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
       <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
       <form onSubmit={onSubmit}>
         {cities.map((item, index) => {
-          return (<div key={index}>
-            <label htmlFor={'city' + (index + 1)}>{index + 1 + ' город'}</label>
-            <input
-              data-key={index}
-              type="text"
-              placeholder={index + 1 + ' город'}
-              onChange={onChange}
-              id={'city' + (index + 1)}
-              name={'city' + (index + 1)}
-              value={item}
-            />
-          </div>)
+          return <CityInput
+            item={item}
+            index={index}
+            onChange={onChange}
+          />
         })}
         <button
           onClick={onAdd}
