@@ -1,0 +1,11 @@
+.wrap {
+  position: relative;
+  padding-right: 40px;
+  height: 60px;
+  button {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    line-height: 0;
+  }
+}
