@@ -2,7 +2,7 @@ import React, { SyntheticEvent, ChangeEvent } from 'react'
 import { PropsFromRedux } from '../../containers/WeatherComparatorContainer'
 import s from './index.module.scss'
 import { errorMsg } from '../../helpers/messages'
-import { ComparisonField } from '../../components/ComparisonCard'
+import { ComparisonCard } from '../../components/ComparisonCard'
 import { WeatherCard } from '../../components/WeatherCard'
 import { CityInput } from '../../components/CityInput'
 import { ComparisonInfo } from '../../components/ComparisonInfo'
@@ -65,10 +65,19 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
     }
   }
 
+  const tmpMsg = (): React.ReactElement => {
+    const fullMsg = errorMsg[code] ? errorMsg[code]['ru'] : message
+    return (
+      <>{fullMsg} {formMessage}</>
+    )
+  }
 
   return (
     <div className={s.wrap + ' ' + tmpGridClass() + ' container'}>
-      <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
+      <div className={s.message}>
+        <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
+        <p>{tmpMsg()}</p>
+      </div>
       <form onSubmit={onSubmit} className={s.form}>
         {cities.map((item, index) => {
           return <div key={item[1]}>
@@ -92,8 +101,8 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
         </div>
       </form>
       {data.length ?
-        <><ComparisonField data={data} />
-          <ComparisonInfo data={data} />
+        <><ComparisonCard data={data} />
+          <div className={s.infoBlock}><ComparisonInfo data={data} /></div>
         </> : null}
       <div className={s.grid}>
         {data.map((item, index) => {

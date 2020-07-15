@@ -3,7 +3,7 @@ import { IWeatherData } from '../../types/state'
 import s from './index.module.scss'
 import img from './wp.jpg'
 
-export const ComparisonField: React.FC<{ data: IWeatherData[] }> = ({ data }) => {
+export const ComparisonCard: React.FC<{ data: IWeatherData[] }> = ({ data }) => {
 
   const sortByTemp = (): [string, number, number] => {
     let temp = -50
@@ -11,7 +11,7 @@ export const ComparisonField: React.FC<{ data: IWeatherData[] }> = ({ data }) =>
     let city = ''
     data.forEach(i => {
       if (i.main.feels_like > temp) {
-        temp = i.main.temp;
+        temp = i.main.feels_like;
         city = i.name;
         feelsLike = i.main.feels_like
       }

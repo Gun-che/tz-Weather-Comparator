@@ -40,22 +40,22 @@ export const ComparisonInfo: React.FC<{ data: IWeatherData[] }> = ({ data }) => 
 
       if (i.wind.speed > windy) {
         windyCity = i.name;
-        windy = i.main.feels_like
+        windy = i.wind.speed
       }
 
       if (i.wind.speed < windless) {
         windlessCity = i.name;
-        windless = i.main.feels_like
+        windless = i.wind.speed
       }
 
       if (i.main.humidity > wet) {
         wetCity = i.name;
-        wet = i.main.feels_like
+        wet = i.main.humidity
       }
 
       if (i.main.humidity < dry) {
         dryCity = i.name;
-        dry = i.main.feels_like
+        dry = i.main.humidity
       }
     })
 
@@ -79,13 +79,13 @@ export const ComparisonInfo: React.FC<{ data: IWeatherData[] }> = ({ data }) => 
 
   return (
     <div>
-      <div className="card blue-grey darken-1">
+      <div className="card blue lighten-2">
         <div className="card-content white-text">
-          <span className="card-title">Card Title</span>
+          <span className="card-title">Таблица сравнений</span>
           <p>Теплее прочего: {warmCity}</p>
           <p>Холоднее прочего: {coldCity}</p>
           <p>Ветренее прочего: {windyCity}</p>
-          <p>Наиенее ветренно: {windlessCity}</p>
+          <p>Наименее ветренно: {windlessCity}</p>
           <p>Самая высокая влажность: {wetCity}</p>
           <p>Суше прочего: {dryCity}</p>
         </div>
