@@ -5,6 +5,7 @@ import { errorMsg } from '../../helpers/messages'
 import { ComparisonField } from '../../components/ComparisonCard'
 import { WeatherCard } from '../../components/WeatherCard'
 import { CityInput } from '../../components/CityInput'
+import { ComparisonInfo } from '../../components/ComparisonInfo'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -91,7 +92,9 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
         </div>
       </form>
       {data.length ?
-        <ComparisonField data={data} /> : null}
+        <><ComparisonField data={data} />
+          <ComparisonInfo data={data} />
+        </> : null}
       <div className={s.grid}>
         {data.map((item, index) => {
           return (
