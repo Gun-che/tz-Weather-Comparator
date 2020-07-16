@@ -34,3 +34,16 @@
   border-bottom: 1px solid #90caf9;
   box-shadow: 0 1px 0 0 #90caf9;
 }
+
+.card,
+button.btn {
+  border-radius: 12px;
+}
+
+.card .card-image img {
+  border-radius: 12px 12px 0 0;
+}
+
+.input-field input {
+  border-radius: 12px;
+}

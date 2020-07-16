@@ -3,7 +3,7 @@ import { connect, ConnectedProps } from 'react-redux'
 import { IStoreState } from '../types/state'
 import { createWeatherRequest } from '../actions/weather'
 import { IAction, IWeatherRequestArgs } from '../types/actions'
-import Weather from '../pages/Weather'
+import { Weather } from '../pages/Weather'
 
 
 const mapStateToProps = (state: IStoreState) => ({
@@ -11,6 +11,8 @@ const mapStateToProps = (state: IStoreState) => ({
   isFetching: state.weather.isFetching,
   message: state.weather.message,
   code: state.weather.code,
+  daily: state.weather.dailyForecastData,
+  hourly: state.weather.hourlyForecastData,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => ({
@@ -32,10 +34,14 @@ export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
   isFetching,
   message,
   code,
+  daily,
+  hourly
 }) => {
   return (
     <div>
       <Weather
+        daily={daily}
+        hourly={hourly}
         getWeather={getWeather}
         data={data}
         isFetching={isFetching}

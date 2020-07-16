@@ -1,4 +1,5 @@
 import React, { SyntheticEvent } from 'react'
+import { Route, Link } from 'react-router-dom'
 import s from './index.module.scss'
 import { PropsFromRedux } from '../../containers/WeatherContainer'
 import { WeatherItem } from '../../components/WeatherItem'
@@ -6,10 +7,14 @@ import { errorMsg } from '../../helpers/messages'
 
 export const Weather: React.FC<PropsFromRedux> = ({
   getWeather,
+  daily,
+  hourly,
   data,
   message,
   code
 }) => {
+
+  console.log(daily, hourly)
 
   const [searchValue, setSearchValue] = React.useState<string>('')
   const [formMessage, setFormMessage] = React.useState<string>('')
@@ -56,8 +61,17 @@ export const Weather: React.FC<PropsFromRedux> = ({
           <i className="material-icons left">search</i>Search</button>
       </form>
       {data.length ? <WeatherItem data={data[0]} /> : null}
+
+      <Route path="/weather/e">
+        <h2>11111</h2>
+        <h2>11111</h2>
+      </Route>
+      <Route path="/weather/s">
+
+        <h2>11111</h2>
+        <h2>11wwwwwwwwwwwwww111</h2>
+        <h2>11111</h2>
+      </Route>
     </section>
   )
 }
-
-export default Weather

@@ -7,6 +7,8 @@ export const initState: IWeatherState = {
   isFetching: false,
   message: '',
   code: 0,
+  dailyForecastData: [],
+  hourlyForecastData: [],
 }
 
 export function weatherReducer(
@@ -23,11 +25,20 @@ export function weatherReducer(
         code: 0,
       }
 
-    case A.WEATHER_SUCCESS:
+    case A.WEATHER_CURRENT_SUCCESS:
       return {
         ...state,
         isFetching: false,
         data: [action.payload.data]
+      }
+
+
+    case A.WEATHER_ALL_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        dailyForecastData: action.payload.data.daily,
+        hourlyForecastData: action.payload.data.hourly,
       }
 
     case A.WEATHER_FAILURE:
