@@ -23,7 +23,7 @@ export function weatherReducer(
         code: 0,
       }
 
-    case A.WEATHER_SUCCESS:
+    case A.WEATHER_CURRENT_SUCCESS:
       return {
         ...state,
         isFetching: false,

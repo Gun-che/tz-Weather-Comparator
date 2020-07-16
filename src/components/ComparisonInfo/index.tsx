@@ -1,5 +1,5 @@
 import React from 'react'
-import { IWeatherData } from '../../types/state'
+import { IWeatherData } from '../../types/apiResponse'
 import { IWeatherSortResult, IWeatherDistributionResult, weatherDistribution, weatherSort } from '../../helpers/weatherDistributionHelpers'
 
 import s from './index.module.scss'

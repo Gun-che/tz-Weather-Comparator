@@ -1,5 +1,5 @@
 import React from 'react'
-import { IWeatherData } from '../../types/state'
+import { IWeatherData } from '../../types/apiResponse'
 import s from './index.module.scss'
 import { weatherMsg } from '../../helpers/messages'
 import { baseIconUrl } from '../../helpers/api'

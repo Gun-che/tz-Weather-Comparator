@@ -1,4 +1,4 @@
-import { IWeatherData } from "../types/state"
+import { IWeatherData } from "../types/apiResponse"
 
 export interface IWeatherSortResult {
   warmCity: string;

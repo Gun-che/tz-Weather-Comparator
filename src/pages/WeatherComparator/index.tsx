@@ -35,7 +35,7 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
     }
   }
 
-  const onChange = (e: ChangeEvent<HTMLInputElement, { dataset: { index: number } }>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement & { dataset: { index: number } }>) => {
     const target = e.currentTarget;
     let arr = [...cities];
     arr[target.dataset.index][0] = target.value;
@@ -56,30 +56,23 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
 
 
   const tmpGridClass = (): string => {
-    if (data.length === 2 || data.length === 4) {
-      return s.two
-    }
-    if (data.length === 0) {
-      return s.empty
-
-    } else {
-      return ''
-    }
+    return (data.length === 2 || data.length === 4) ? s.two :
+      data.length === 0 ? s.empty : ''
   }
 
   const tmpMsg = (): React.ReactElement => {
     const fullMsg = errorMsg[code] ? errorMsg[code]['ru'] : message
-    return (
-      <>{fullMsg} {formMessage}</>
-    )
+    return <p>{fullMsg} {formMessage}</p>
   }
 
   return (
     <div className={s.wrap + ' ' + tmpGridClass() + ' container'}>
+
       <div className={s.message}>
         <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
-        <p>{tmpMsg()}</p>
+        {tmpMsg()}
       </div>
+
       <form onSubmit={onSubmit} className={s.form}>
         {cities.map((item, index) => {
           return <div key={item[1]}>
@@ -102,10 +95,12 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
             <i className="material-icons left">search</i>Search</button>
         </div>
       </form>
+
       {data.length ?
         <><ComparisonCard data={data} />
           <div className={s.infoBlock}><ComparisonInfo data={data} /></div>
         </> : null}
+
       <div className={s.grid}>
         {data.map((item, index) => {
           return (

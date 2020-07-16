@@ -3,6 +3,7 @@ export const baseIconUrl = 'http://openweathermap.org/img/wn/';
 
 interface IApi {
   get(city: string): Promise<any>,
+  getAll(coord: { lat: number, lon: number }): Promise<any>,
   baseUrl: string,
   _tmp: AxiosInstance,
   key: string,
@@ -19,6 +20,10 @@ class Api implements IApi {
 
   get = (city: string): Promise<any> => {
     return this._tmp.get(`weather?q=${city}&units=metric&lang=ru&appid=${this.key}`)
+  }
+
+  getAll = (coord: { lat: number, lon: number }): Promise<any> => {
+    return this._tmp.get(`onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely,current&units=metric&appid=${this.key}`)
   }
 }
 

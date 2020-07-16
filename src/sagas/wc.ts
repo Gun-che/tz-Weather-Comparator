@@ -7,7 +7,7 @@ import {
 import * as A from '../actions/wc'
 import { IWeatherComparatorRequest } from '../types/actions'
 import { api } from '../helpers/api'
-import { IWeatherData } from '../types/state';
+import { IWeatherData } from '../types/apiResponse';
 
 export function* handlerWCRequest(action: IWeatherComparatorRequest) {
   try {

@@ -1,4 +1,4 @@
-import { IWeatherData } from "./state";
+import { IWeatherData } from "./apiResponse";
 
 export interface IAction {
   type: string;
