@@ -21,6 +21,10 @@ export const errorMsg: IMsgs = {
   empty: {
     ru: 'Введите название города!',
     en: 'Enter the name of the city!'
+  },
+  empty2: {
+    ru: 'Введите названия городов!',
+    en: 'Enter the names of the cities!'
   }
 }
 
@@ -210,7 +214,7 @@ export const weatherMsg: IMsgs = {
     en: 'fog'
   },
   751: {
-    ru: 'песчанная будя',
+    ru: 'песчанная буря',
     en: 'sand'
   },
   761: {

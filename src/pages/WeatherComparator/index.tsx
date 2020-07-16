@@ -1,11 +1,12 @@
 import React, { SyntheticEvent, ChangeEvent } from 'react'
+
 import { PropsFromRedux } from '../../containers/WeatherComparatorContainer'
-import s from './index.module.scss'
 import { errorMsg } from '../../helpers/messages'
 import { ComparisonCard } from '../../components/ComparisonCard'
 import { WeatherCard } from '../../components/WeatherCard'
 import { CityInput } from '../../components/CityInput'
 import { ComparisonInfo } from '../../components/ComparisonInfo'
+import s from './index.module.scss'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -21,24 +22,25 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!cities.some(i => !i[0])) {
-      getWeather(cities.map(i => i[0]))
+    if (cities.some(i => i[0])) {
+      const post = cities
+        .filter(i => i[0])
+        .map(i => i[0])
+
+      getWeather(post)
       formMessage && setFormMessage('')
 
     } else {
-      setFormMessage(errorMsg.empty['ru'])
+      setFormMessage(errorMsg.empty2['ru'])
     }
   }
 
-  const onChange = (e: ChangeEvent<HTMLInputElement & { dataset: { index: number } }>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement, { dataset: { index: number } }>) => {
     const target = e.currentTarget;
-
     let arr = [...cities];
     arr[target.dataset.index][0] = target.value;
 
-    console.log(target.dataset.index)
-
-    setSities(arr)
+    setSities(arr);
   }
 
   const onAdd = (e: SyntheticEvent) => {
