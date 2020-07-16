@@ -1,4 +1,4 @@
-import { IWeatherData } from "./apiResponse";
+import { IWeatherData, IDailyWeatherData, IHourlyWeatherData } from "./apiResponse";
 
 interface IState {
   isFetching: boolean;
@@ -6,13 +6,15 @@ interface IState {
   code: number;
 }
 
-export interface IWeatherState extends IState {
+export interface IWeatherState extends IWCState {
+  dailyForecastData: IDailyWeatherData[];
+  hourlyForecastData: IHourlyWeatherData[];
+}
+
+export interface IWCState extends IState {
   data: IWeatherData[];
   timestamp: Date;
 }
-
-export interface IWCState extends IWeatherState { }
-
 
 export interface IStoreState {
   weather: IWeatherState,

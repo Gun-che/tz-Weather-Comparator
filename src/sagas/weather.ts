@@ -6,7 +6,7 @@ import {
 import * as A from '../actions/weather'
 import { IWeatherRequest } from '../types/actions'
 import { api } from '../helpers/api'
-import { IWeatherData } from '../types/apiResponse'
+import { IWeatherData, IAllWeatherData } from '../types/apiResponse'
 
 export function* handlerWeatherRequest(action: IWeatherRequest) {
   try {
@@ -21,7 +21,7 @@ export function* handlerWeatherRequest(action: IWeatherRequest) {
       }
     })
 
-    const response: IWeatherResponse = yield apply(api, api.getAll, [{ lat, lon }])
+    const response: IAllWeatherResponse = yield apply(api, api.getAll, [{ lat, lon }])
 
     yield put({
       type: A.WEATHER_ALL_SUCCESS,
@@ -47,4 +47,9 @@ export function* watchWeatherRequest() {
 interface IWeatherResponse {
   status: number;
   data: IWeatherData;
+}
+
+interface IAllWeatherResponse {
+  status: number;
+  data: IAllWeatherData;
 }
