@@ -19,3 +19,30 @@ interface IWeatherMain {
   pressure: number;
   temp: number;
 }
+
+export interface IAllWeatherData {
+  hourly: IHourlyWeatherData[];
+  daily: IDailyWeatherData[];
+}
+
+export interface IHourlyWeatherData {
+  clouds: number;
+  feels_like: number;
+  humidity: number;
+  pressure: number;
+  temp: number;
+  weather: IWeatherItem;
+  wind_speed: number;
+}
+
+export interface IDailyWeatherData {
+  clouds: number;
+  weather: IWeatherItem[];
+  pressure: number;
+  feels_like: { day: number, night: number, eve: number, morn: number };
+  humidity: number;
+  sunrise: number;
+  sunset: number;
+  temp: { day: number, night: number, eve: number, morn: number };
+  wind_speed: number;
+}
