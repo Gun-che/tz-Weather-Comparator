@@ -1,9 +1,13 @@
 import React, { SyntheticEvent } from 'react'
 import { Route, Link } from 'react-router-dom'
-import s from './index.module.scss'
 import { PropsFromRedux } from '../../containers/WeatherContainer'
-import { WeatherItem } from '../../components/WeatherItem'
+import { CurrentWeather } from './components/CurrentWeather'
 import { errorMsg } from '../../helpers/messages'
+import { HourlyForecast } from './components/HourlyForecast'
+import { LoadingThin } from '../../components/Loading'
+import { DailyForecast } from './components/DailyForecast'
+
+import s from './index.module.scss'
 
 export const Weather: React.FC<PropsFromRedux> = ({
   getWeather,
@@ -11,7 +15,8 @@ export const Weather: React.FC<PropsFromRedux> = ({
   hourly,
   data,
   message,
-  code
+  code,
+  isFetching
 }) => {
 
   console.log(daily, hourly)
@@ -44,6 +49,19 @@ export const Weather: React.FC<PropsFromRedux> = ({
 
   return (
     <section className={s.wrap + ' container'}>
+      <div className={s.tab + ' card-tabs'}>
+        <ul className="tabs">
+          <li className="tab">
+            <Link to="/weather">Текущая погода</Link>
+          </li>
+          <li className="tab">
+            <Link to="/weather/hourly">Почасовой прогноз</Link>
+          </li>
+          <li className="tab">
+            <Link to="/weather/daily">Прогноз на неделю</Link>
+          </li>
+        </ul>
+      </div>
       <div className={s.message}>
         <h3>{tmpMsg()}</h3>
       </div>
@@ -60,17 +78,26 @@ export const Weather: React.FC<PropsFromRedux> = ({
           className="waves-effect waves-light btn blue lighten-3">
           <i className="material-icons left">search</i>Search</button>
       </form>
-      {data.length ? <WeatherItem data={data[0]} /> : null}
 
-      <Route path="/weather/e">
-        <h2>11111</h2>
-        <h2>11111</h2>
+      <Route path="/weather" exact>
+        {data.length ?
+          <CurrentWeather data={data[0]} /> :
+          isFetching ? <LoadingThin /> :
+            <h2 className={s.input}>Введите название города</h2>}
       </Route>
-      <Route path="/weather/s">
 
-        <h2>11111</h2>
-        <h2>11wwwwwwwwwwwwww111</h2>
-        <h2>11111</h2>
+      <Route path="/weather/hourly">
+        {hourly.length ?
+          <HourlyForecast data={hourly} name={data[0].name} /> :
+          isFetching ? <LoadingThin /> :
+            <h2 className={s.input}>Введите название города</h2>}
+      </Route>
+
+      <Route path="/weather/daily">
+        {daily.length ?
+          <DailyForecast name={data[0].name} data={daily} /> :
+          isFetching ? <LoadingThin /> :
+            <h2 className={s.input}>Введите название города</h2>}
       </Route>
     </section>
   )

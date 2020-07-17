@@ -1,12 +1,12 @@
 import React from 'react'
-import { IWeatherData } from '../../types/apiResponse'
+import { IWeatherData } from '../../../../types/apiResponse'
 import s from './index.module.scss'
-import { weatherMsg } from '../../helpers/messages'
-import { baseIconUrl } from '../../helpers/api'
+import { weatherMsg } from '../../../../helpers/messages'
+import { baseIconUrl } from '../../../../helpers/api'
 
 
 
-export const WeatherItem: React.FC<{ data: IWeatherData }> = ({
+export const CurrentWeather: React.FC<{ data: IWeatherData }> = ({
   data: {
     name,
     visibility,
