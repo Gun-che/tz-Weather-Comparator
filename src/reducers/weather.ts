@@ -28,7 +28,6 @@ export function weatherReducer(
     case A.WEATHER_CURRENT_SUCCESS:
       return {
         ...state,
-        isFetching: false,
         data: [action.payload.data]
       }
 

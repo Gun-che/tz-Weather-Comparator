@@ -31,8 +31,9 @@ export interface IHourlyWeatherData {
   humidity: number;
   pressure: number;
   temp: number;
-  weather: IWeatherItem;
+  weather: IWeatherItem[];
   wind_speed: number;
+  dt: number;
 }
 
 export interface IDailyWeatherData {
@@ -45,4 +46,5 @@ export interface IDailyWeatherData {
   sunset: number;
   temp: { day: number, night: number, eve: number, morn: number };
   wind_speed: number;
+  dt: number;
 }
