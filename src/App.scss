@@ -1,3 +1,5 @@
+@import "./SASS/const";
+
 *,
 ::after,
 ::before {
@@ -57,4 +59,8 @@ button.btn-non-style {
   &:hover {
     cursor: pointer;
   }
+}
+
+.tabs .tab a {
+  color: $dark;
 }

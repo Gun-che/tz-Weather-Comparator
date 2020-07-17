@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, useLocation } from 'react-router-dom'
 import { PropsFromRedux } from '../../containers/WeatherContainer'
 import { CurrentWeather } from './components/CurrentWeather'
 import { errorMsg } from '../../helpers/messages'
@@ -19,10 +19,23 @@ export const Weather: React.FC<PropsFromRedux> = ({
   isFetching
 }) => {
 
-  console.log(daily, hourly)
+  const tmpLocation = useLocation()
+  console.log(tmpLocation)
 
   const [searchValue, setSearchValue] = React.useState<string>('')
   const [formMessage, setFormMessage] = React.useState<string>('')
+  const [location, setLocation] = React.useState(tmpLocation.pathname)
+  const [tabsClass, setTabsClass] = React.useState(s.cw)
+
+  React.useEffect(() => {
+    const loc = tmpLocation.pathname;
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    loc === '/weather' && tabsClass !== s.cw ? setTabsClass(s.cw) :
+      loc === '/weather/hourly' ? setTabsClass(s.hf) :
+        loc === '/weather/daily' ? setTabsClass(s.df) :
+          null
+
+  }, [tabsClass, tmpLocation.pathname])
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,17 +60,19 @@ export const Weather: React.FC<PropsFromRedux> = ({
     )
   }
 
+  const tmpTabClass = () => { }
+
   return (
     <section className={s.wrap + ' container'}>
-      <div className={s.tab + ' card-tabs'}>
+      <div className={tabsClass + ' card-tabs'}>
         <ul className="tabs">
-          <li className="tab">
+          <li className={s.cw + " tab"}>
             <Link to="/weather">Текущая погода</Link>
           </li>
-          <li className="tab">
+          <li className={s.hf + " tab"}>
             <Link to="/weather/hourly">Почасовой прогноз</Link>
           </li>
-          <li className="tab">
+          <li className={s.df + " tab"}>
             <Link to="/weather/daily">Прогноз на неделю</Link>
           </li>
         </ul>

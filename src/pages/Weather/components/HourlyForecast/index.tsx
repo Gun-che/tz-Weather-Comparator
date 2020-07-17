@@ -24,7 +24,7 @@ export const HourlyForecast: React.FC<{ data: IHourlyWeatherData[], name: string
           const date = timeFormater(dt)
 
           return (
-            <div key={dt} className={s['h' + date.hour] + s.sec}>
+            <div key={dt} className={s['h' + date.hour] + ' ' + s.sec}>
               <div>
                 <p className={s.time}>{date.time}</p>
                 <p className={s.date}>{date.date}</p>
@@ -33,8 +33,8 @@ export const HourlyForecast: React.FC<{ data: IHourlyWeatherData[], name: string
                 <img src={`${baseIconUrl}${icon}@4x.png`} alt={description} title={anotation} />
               </div>
               <div className={s.temp}>
-                <div className=""><i className="material-icons left">flare</i>{temp}</div>
-                <div><i className="material-icons left">navigate_next</i>{wind_speed}</div>
+                <div className=""><i className="material-icons left">flare</i>{Math.round(temp)}°C</div>
+                <div><i className="material-icons left">navigate_next</i>{wind_speed}м/с</div>
               </div>
             </div>
           )

@@ -1,0 +1,33 @@
+@import "../../SASS/const";
+.df,
+.cw,
+.hf {
+  transition: all 0.4s;
+  color: $dark;
+  &:hover,
+  &:focus {
+    background-color: rgba($blue, $alpha: 0.3);
+    a {
+      color: $dark - #444 !important;
+    }
+  }
+}
+
+.df .df {
+  background: $blue;
+  a {
+    color: white !important;
+  }
+}
+.cw .cw {
+  background: $blue;
+  a {
+    color: white !important;
+  }
+}
+.hf .hf {
+  background: $blue;
+  a {
+    color: white !important;
+  }
+}
