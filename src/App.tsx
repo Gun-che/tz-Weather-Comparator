@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import loadable from '@loadable/component'
 import {
   BrowserRouter as Router,
@@ -8,6 +7,8 @@ import {
 } from 'react-router-dom'
 import { Header } from './components/Header';
 import { LoadingConst } from './components/Loading';
+
+import './App.scss';
 
 const Home = loadable(() => import('./pages/HomePage'), {
   fallback: LoadingConst,
