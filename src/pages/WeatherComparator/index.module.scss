@@ -42,3 +42,41 @@
     grid-column: span 2;
   }
 }
+
+@media all and (max-width: 600px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    .message {
+      grid-column: span 1;
+    }
+    .infoBlock {
+      grid-column: span 1;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      grid-column: span 1;
+    }
+  }
+  .two .grid {
+    grid-template-columns: 1fr;
+  }
+  .empty {
+    form {
+      grid-column: span 1;
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+  .wrap {
+    .btns {
+      flex-direction: column;
+      align-items: center;
+      height: 90px;
+      padding: 0;
+    }
+    .form {
+      grid-auto-rows: auto;
+    }
+  }
+}

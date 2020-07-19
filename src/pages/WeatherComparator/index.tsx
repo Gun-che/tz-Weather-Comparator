@@ -69,7 +69,7 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
   }
 
   return (
-    <div className={s.wrap + ' ' + tmpGridClass() + ' container'}>
+    <div className={s.wrap + ' ' + tmpGridClass() + ' containerCust'}>
 
       <div className={s.message}>
         <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>

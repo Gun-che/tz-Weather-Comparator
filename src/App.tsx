@@ -9,7 +9,7 @@ import {
 import { Header } from './components/Header';
 import { LoadingConst } from './components/Loading';
 
-const Home = loadable(() => import('./components/HomePage'), {
+const Home = loadable(() => import('./pages/HomePage'), {
   fallback: LoadingConst,
 })
 

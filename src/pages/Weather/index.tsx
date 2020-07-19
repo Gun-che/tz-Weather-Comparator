@@ -59,7 +59,7 @@ export const Weather: React.FC<PropsFromRedux> = ({
   }
 
   return (
-    <section className={s.wrap + ' container'}>
+    <section className={s.wrap + ' containerCust'}>
       <ErrorMessage message={tmpMsg()} />
       <div className={tabsClass + ' card-tabs ' + s.tabs}>
         <ul className="tabs">

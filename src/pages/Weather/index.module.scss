@@ -33,7 +33,18 @@
 }
 
 .tabs {
-  margin: 20px 0;
+  display: flex;
+  margin: 20px auto;
+  width: 100%;
+  justify-content: center;
+  &:hover {
+    background-color: transparent;
+  }
+  ul {
+    width: auto;
+    margin: 0 auto;
+    align-items: center;
+  }
 }
 
 .form {
@@ -47,5 +58,38 @@
     padding: 0;
     width: 44px;
     height: 40px;
+    margin: 15px 0 15px 20px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .tabs {
+    &:hover {
+      background-color: transparent;
+    }
+    ul {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+
+  .form {
+    > div {
+      width: 80%;
+    }
+    button {
+      margin: 15px 0 15px auto;
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+  .form {
+    > div {
+      width: 70%;
+    }
+    button {
+      margin: 15px 0 15px auto;
+    }
   }
 }
