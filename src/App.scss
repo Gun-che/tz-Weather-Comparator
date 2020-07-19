@@ -10,9 +10,10 @@
   padding: 0 1rem !important;
 }
 
-.container {
-  max-width: 960px;
+.containerCust {
+  max-width: 1040px;
   padding: 40px;
+  margin: auto;
 }
 
 .input-field input[type="text"]:focus + label {
@@ -63,4 +64,15 @@ button.btn-non-style {
 
 .tabs .tab a {
   color: $dark;
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
+}
+
+@media all and (max-width: 600px) {
+  h2 {
+    font-size: 20px;
+  }
 }

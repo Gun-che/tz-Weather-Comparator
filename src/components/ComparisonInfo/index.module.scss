@@ -14,3 +14,17 @@
 .title {
   font-size: 200% !important;
 }
+
+@media all and (max-width: 600px) {
+  .body {
+    grid-template-columns: 1fr;
+    p {
+      padding-top: 20px;
+    }
+  }
+
+  .wrap {
+    text-align: center;
+    padding: 15px 0;
+  }
+}
