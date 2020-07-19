@@ -1,72 +1,103 @@
 .h0 {
-  background: rgb(84, 45, 148);
+  background: rgb(60, 33, 105) + #555;
 }
 .h1 {
-  background: rgb(78, 42, 136);
+  background: rgb(52, 28, 90) + #555;
 }
 .h2 {
-  background: rgb(70, 38, 122);
+  background: rgb(63, 34, 110) + #555;
 }
 .h3 {
-  background: rgb(63, 34, 109);
+  background: rgb(85, 48, 145) + #555;
 }
 .h4 {
-  background: rgb(72, 40, 122);
+  background: rgb(97, 55, 163) + #555;
 }
 .h5 {
-  background: rgb(127, 52, 161);
+  background: rgb(148, 61, 189) + #555;
 }
 .h6 {
-  background: rgb(171, 64, 175);
+  background: rgb(191, 72, 196) + #555;
 }
 .h7 {
-  background: rgb(189, 77, 133);
+  background: rgb(226, 92, 143) + #555;
 }
 .h8 {
-  background: rgb(211, 82, 157);
+  background: rgb(255, 102, 128) + #555;
 }
 .h9 {
-  background: rgb(241, 115, 93);
+  background: rgb(241, 128, 93) + #555;
 }
 .h10 {
-  background: rgb(255, 157, 65);
+  background: rgb(255, 157, 65) + #555;
 }
 .h11 {
-  background: rgb(255, 191, 52);
+  background: rgb(255, 191, 52) + #555;
 }
 .h12 {
-  background: rgb(255, 192, 55);
+  background: rgb(255, 192, 55) + #555;
 }
 .h13 {
-  background: rgb(255, 170, 44);
+  background: rgb(255, 170, 44) + #555;
 }
 .h14 {
-  background: rgb(253, 153, 60);
+  background: rgb(253, 153, 60) + #555;
 }
 .h15 {
-  background: rgb(241, 144, 52);
+  background: rgb(241, 144, 52) + #555;
 }
 .h16 {
-  background: rgb(241, 121, 52);
+  background: rgb(241, 121, 52) + #555;
 }
 .h17 {
-  background: rgb(223, 68, 48);
+  background: rgb(252, 87, 65) + #555;
 }
 .h18 {
-  background: rgb(197, 51, 51);
+  background: rgb(253, 64, 64) + #555;
 }
 .h19 {
-  background: rgb(184, 49, 89);
+  background: rgb(218, 57, 105) + #555;
 }
 .h20 {
-  background: rgb(173, 51, 167);
+  background: rgb(156, 48, 151) + #555;
 }
 .h21 {
-  background: rgb(128, 49, 165);
+  background: rgb(142, 54, 184) + #555;
 }
 .h22 {
-  background: rgb(93, 50, 163);
+  background: rgb(102, 56, 177) + #555;
 }
 .h23 {
-  background: rgb(84, 45, 148);
+  background: rgb(84, 45, 148) + #555;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-columns: 290px;
+  gap: 20px 5px;
+  .sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300px;
+    border-radius: 12px;
+    align-items: center;
+    text-align: center;
+    padding: 4px;
+    i {
+      font-size: 12px;
+    }
+    .temp {
+      font-size: 10px;
+      text-align: left;
+    }
+    .time {
+      font-weight: 700;
+    }
+    .date {
+      font-weight: 500;
+      font-size: 10px;
+    }
+  }
 }

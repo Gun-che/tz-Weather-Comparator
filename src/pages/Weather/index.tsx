@@ -8,6 +8,7 @@ import { LoadingThin } from '../../components/Loading'
 import { DailyForecast } from './components/DailyForecast'
 
 import s from './index.module.scss'
+import { ErrorMessage } from '../../components/ErrorMessage'
 
 export const Weather: React.FC<PropsFromRedux> = ({
   getWeather,
@@ -24,7 +25,6 @@ export const Weather: React.FC<PropsFromRedux> = ({
 
   const [searchValue, setSearchValue] = React.useState<string>('')
   const [formMessage, setFormMessage] = React.useState<string>('')
-  const [location, setLocation] = React.useState(tmpLocation.pathname)
   const [tabsClass, setTabsClass] = React.useState(s.cw)
 
   React.useEffect(() => {
@@ -53,18 +53,15 @@ export const Weather: React.FC<PropsFromRedux> = ({
     setSearchValue(e.currentTarget.value)
   }
 
-  const tmpMsg = (): React.ReactElement => {
+  const tmpMsg = (): string => {
     const fullMsg = errorMsg[code] ? errorMsg[code]['ru'] : message
-    return (
-      <>{fullMsg} {formMessage}</>
-    )
+    return fullMsg || formMessage ? `${fullMsg} ${formMessage}` : ''
   }
-
-  const tmpTabClass = () => { }
 
   return (
     <section className={s.wrap + ' container'}>
-      <div className={tabsClass + ' card-tabs'}>
+      <ErrorMessage message={tmpMsg()} />
+      <div className={tabsClass + ' card-tabs ' + s.tabs}>
         <ul className="tabs">
           <li className={s.cw + " tab"}>
             <Link to="/weather">Текущая погода</Link>
@@ -77,21 +74,21 @@ export const Weather: React.FC<PropsFromRedux> = ({
           </li>
         </ul>
       </div>
-      <div className={s.message}>
-        <h3>{tmpMsg()}</h3>
-      </div>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="search">Введите город</label>
-        <input
-          type="text"
-          id="search"
-          value={searchValue}
-          onChange={onChange}
-        />
+      <form className={s.form} onSubmit={onSubmit}>
+        <div className="input-field">
+          <input
+            name="search"
+            type="text"
+            id="search"
+            value={searchValue}
+            onChange={onChange}
+            className="validate"
+          />
+          <label htmlFor="search">Введите город</label></div>
         <button
           type="submit"
-          className="waves-effect waves-light btn blue lighten-3">
-          <i className="material-icons left">search</i>Search</button>
+          className="waves-effect waves-light btn-floating blue lighten-3">
+          <i className="material-icons left">search</i></button>
       </form>
 
       <Route path="/weather" exact>

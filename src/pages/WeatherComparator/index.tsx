@@ -7,6 +7,7 @@ import { WeatherCard } from '../../components/WeatherCard'
 import { CityInput } from '../../components/CityInput'
 import { ComparisonInfo } from '../../components/ComparisonInfo'
 import s from './index.module.scss'
+import { ErrorMessage } from '../../components/ErrorMessage'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
@@ -60,9 +61,11 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
       data.length === 0 ? s.empty : ''
   }
 
-  const tmpMsg = (): React.ReactElement => {
+  const tmpMsg = (): string => {
     const fullMsg = errorMsg[code] ? errorMsg[code]['ru'] : message
-    return <p>{fullMsg} {formMessage}</p>
+    return fullMsg || formMessage ?
+      `${fullMsg} ${formMessage}` :
+      ''
   }
 
   return (
@@ -70,7 +73,7 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
 
       <div className={s.message}>
         <h2>Введите названия городов, погоду в которых вы хотите сравнить</h2>
-        {tmpMsg()}
+        <ErrorMessage message={tmpMsg()} />
       </div>
 
       <form onSubmit={onSubmit} className={s.form}>
