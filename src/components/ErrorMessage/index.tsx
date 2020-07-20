@@ -6,7 +6,7 @@ export const ErrorMessage: React.FC<{ message: string }> = (
 ) => {
 
   return (<>
-    {message ? (<div className={s.wrap}><h2>{message}</h2></div>) : (<div className={s.emptyWrap}></div>)
+    {message ? (<div className={s.wrap + ' containerCust'}><h2>{message}</h2></div>) : (<div className={s.emptyWrap}></div>)
     }
   </>)
 }
