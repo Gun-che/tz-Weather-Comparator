@@ -89,6 +89,7 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
         })}
         <div className={s.btns}>
           <button
+            type="button"
             onClick={onAdd}
             className="waves-effect waves-light btn blue lighten-3">
             <i className="material-icons left">add_location</i>Add location</button>
