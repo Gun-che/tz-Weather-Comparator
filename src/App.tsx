@@ -31,16 +31,16 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Switch>
-        <Route path="/" exact>
+        <Route path={process.env.PUBLIC_URL + "/"} exact>
           <Home />
         </Route>
-        <Route path="/weather">
+        <Route path={process.env.PUBLIC_URL + "/weather"}>
           <Weather />
         </Route>
-        <Route path="/wc">
+        <Route path={process.env.PUBLIC_URL + "/wc"}>
           <WeatherComparator />
         </Route>
-        <Route path="*">
+        <Route path={process.env.PUBLIC_URL + "*"}>
           <NotFound />
         </Route>
       </Switch>

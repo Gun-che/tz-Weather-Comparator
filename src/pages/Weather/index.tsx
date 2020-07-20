@@ -30,9 +30,9 @@ export const Weather: React.FC<PropsFromRedux> = ({
   React.useEffect(() => {
     const loc = tmpLocation.pathname;
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    loc === '/weather' && tabsClass !== s.cw ? setTabsClass(s.cw) :
-      loc === '/weather/hourly' ? setTabsClass(s.hf) :
-        loc === '/weather/daily' ? setTabsClass(s.df) :
+    loc === (process.env.PUBLIC_URL + '/weather') && tabsClass !== s.cw ? setTabsClass(s.cw) :
+      loc === (process.env.PUBLIC_URL + '/weather/hourly') ? setTabsClass(s.hf) :
+        loc === (process.env.PUBLIC_URL + '/weather/daily') ? setTabsClass(s.df) :
           null
 
   }, [tabsClass, tmpLocation.pathname])
@@ -64,13 +64,13 @@ export const Weather: React.FC<PropsFromRedux> = ({
       <div className={tabsClass + ' card-tabs ' + s.tabs}>
         <ul className="tabs">
           <li className={s.cw + " tab"}>
-            <Link to="/weather">Текущая погода</Link>
+            <Link to={process.env.PUBLIC_URL + "/weather"}>Текущая погода</Link>
           </li>
           <li className={s.hf + " tab"}>
-            <Link to="/weather/hourly">Почасовой прогноз</Link>
+            <Link to={process.env.PUBLIC_URL + "/weather/hourly"}>Почасовой прогноз</Link>
           </li>
           <li className={s.df + " tab"}>
-            <Link to="/weather/daily">Прогноз на неделю</Link>
+            <Link to={process.env.PUBLIC_URL + "/weather/daily"}>Прогноз на неделю</Link>
           </li>
         </ul>
       </div>
@@ -91,21 +91,21 @@ export const Weather: React.FC<PropsFromRedux> = ({
           <i className="material-icons left">search</i></button>
       </form>
 
-      <Route path="/weather" exact>
+      <Route path={process.env.PUBLIC_URL + "/weather"} exact>
         {data.length ?
           <CurrentWeather data={data[0]} /> :
           isFetching ? <LoadingThin /> :
             <h2 className={s.input}>Введите название города</h2>}
       </Route>
 
-      <Route path="/weather/hourly">
+      <Route path={process.env.PUBLIC_URL + "/weather/hourly"}>
         {hourly.length ?
           <HourlyForecast data={hourly} name={data[0].name} /> :
           isFetching ? <LoadingThin /> :
             <h2 className={s.input}>Введите название города</h2>}
       </Route>
 
-      <Route path="/weather/daily">
+      <Route path={process.env.PUBLIC_URL + "/weather/daily"}>
         {daily.length ?
           <DailyForecast name={data[0].name} data={daily} /> :
           isFetching ? <LoadingThin /> :

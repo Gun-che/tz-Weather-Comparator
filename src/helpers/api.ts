@@ -11,7 +11,7 @@ interface IApi {
 
 class Api implements IApi {
   baseUrl = 'https://api.openweathermap.org/data/2.5/';
-  key = process.env.REACT_APP_OPEN_WEATHER_KEY || '';
+  key = process.env.REACT_APP_OPEN_WEATHER_KEY || '7155342732aa29bc9d0c9f5cd5e4554b';
 
   _tmp = axios.create({
     baseURL: this.baseUrl,
