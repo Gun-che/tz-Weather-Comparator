@@ -26,7 +26,7 @@ const WeatherComparator = loadable(() => import('./containers/WeatherComparatorC
   fallback: LoadingConst,
 })
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <Router>
       <Header />
@@ -48,4 +48,3 @@ const App: React.FC = () => {
   );
 }
 
-export default App;

@@ -71,6 +71,29 @@ h2 {
   text-align: center;
 }
 
+.animEl {
+  animation: fadeInContent 0.4s;
+}
+
+.containerCust {
+  animation: fadeInContentLight 0.4s;
+}
+
+@keyframes fadeInContent {
+  from {
+    margin-top: 2vh;
+    filter: blur(2px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInContentLight {
+  from {
+    filter: blur(2px);
+    opacity: 0;
+  }
+}
+
 @media all and (max-width: 600px) {
   h2 {
     font-size: 20px;

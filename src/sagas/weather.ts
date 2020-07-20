@@ -9,6 +9,7 @@ import { api } from '../helpers/api'
 import { IWeatherData, IAllWeatherData } from '../types/apiResponse'
 
 export function* handlerWeatherRequest(action: IWeatherRequest) {
+
   try {
     const transitResponse: IWeatherResponse = yield apply(api, api.get, [action.payload.city])
 
@@ -29,9 +30,8 @@ export function* handlerWeatherRequest(action: IWeatherRequest) {
         data: response.data
       }
     })
-
   } catch (error) {
-    console.error();
+    console.error(error);
     yield put({
       type: A.WEATHER_FAILURE,
       payload: error,

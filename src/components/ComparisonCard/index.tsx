@@ -1,6 +1,5 @@
 import React from 'react'
 import { IWeatherData } from '../../types/apiResponse'
-import s from './index.module.scss'
 import img from './wp.jpg'
 
 export const ComparisonCard: React.FC<{ data: IWeatherData[] }> = ({ data }) => {
@@ -20,7 +19,7 @@ export const ComparisonCard: React.FC<{ data: IWeatherData[] }> = ({ data }) => 
   }
 
   return (
-    <div className={s.wrap}>
+    <div>
       <div className="card">
         <div className="card-image">
           <img src={img} alt="sky" />
@@ -30,9 +29,7 @@ export const ComparisonCard: React.FC<{ data: IWeatherData[] }> = ({ data }) => 
           <p>Температура здесь сегодня {Math.round(sortByTemp()[1]) + `°C!`}</p>
           <p>По ощущениям {Math.round(sortByTemp()[2]) + `°C`}</p>
         </div>
-
       </div>
-      <h2>{}</h2>
     </div>
   )
 }

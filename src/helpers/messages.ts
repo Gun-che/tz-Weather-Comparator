@@ -18,6 +18,58 @@ export const errorMsg: IMsgs = {
     ru: 'Плохой запрос',
     en: 'Bad Request'
   },
+  401: {
+    ru: 'Не авторизован',
+    en: 'Unauthorized '
+  },
+  403: {
+    ru: 'Запрещено',
+    en: ' Forbidden'
+  },
+  405: {
+    ru: 'Метод не поддерживается',
+    en: 'Method Not Allowed '
+  },
+  406: {
+    ru: 'Неприемлемо',
+    en: 'Not Acceptable'
+  },
+  407: {
+    ru: 'Необходима аутентификация прокси',
+    en: 'Proxy Authentication Required'
+  },
+  408: {
+    ru: 'истекло время ожидания',
+    en: 'Request Timeout '
+  },
+  409: {
+    ru: 'конфликт',
+    en: 'Conflict'
+  },
+  410: {
+    ru: 'удалён',
+    en: 'Gone'
+  },
+  500: {
+    ru: 'внутренняя ошибка сервера',
+    en: 'Internal Server Error'
+  },
+  501: {
+    ru: 'не реализовано',
+    en: 'Not Implemented '
+  },
+  502: {
+    ru: 'плохой, ошибочный шлюз',
+    en: 'Bad Gateway'
+  },
+  503: {
+    ru: 'сервис недоступен',
+    en: 'Service Unavailable'
+  },
+  504: {
+    ru: 'шлюз не отвечает',
+    en: 'Gateway Timeout'
+  },
   empty: {
     ru: 'Введите название города!',
     en: 'Enter the name of the city!'

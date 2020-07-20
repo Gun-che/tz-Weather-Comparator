@@ -43,6 +43,10 @@
   }
 }
 
+.loading {
+  grid-column: span 2;
+}
+
 @media all and (max-width: 600px) {
   .wrap {
     grid-template-columns: 1fr;
@@ -64,6 +68,9 @@
     form {
       grid-column: span 1;
     }
+  }
+  .loading {
+    grid-column: span 1;
   }
 }
 

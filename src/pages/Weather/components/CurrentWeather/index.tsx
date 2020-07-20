@@ -1,9 +1,9 @@
 import React from 'react'
 import { IWeatherData } from '../../../../types/apiResponse'
-import s from './index.module.scss'
 import { weatherMsg } from '../../../../helpers/messages'
 import { baseIconUrl } from '../../../../helpers/api'
 import { withACapitalLetter } from '../../../../helpers/withACapitalLetter'
+import s from './index.module.scss'
 
 
 
@@ -11,15 +11,15 @@ export const CurrentWeather: React.FC<{ data: IWeatherData }> = ({
   data: {
     name,
     visibility,
-    weather: [{ id, icon, description }],
+    weather: [{ id, icon }],
     wind: { speed },
     main: { feels_like, humidity, pressure, temp }
 
   }
 }) => {
-  return (
-    <div className={s.wrap}>
 
+  return (
+    <div className={s.wrap + ' animEl'}>
       <h2>Погода в населенном пункте {name}</h2>
       <div className={s.info}>
         <h3>Температура: {temp}°C по ощущениям: {feels_like}°C</h3>

@@ -2,7 +2,6 @@ import {
   put,
   takeEvery,
   apply,
-  // all,
 } from 'redux-saga/effects'
 import * as A from '../actions/wc'
 import { IWeatherComparatorRequest } from '../types/actions'
@@ -10,15 +9,11 @@ import { api } from '../helpers/api'
 import { IWeatherData } from '../types/apiResponse';
 
 export function* handlerWCRequest(action: IWeatherComparatorRequest) {
-  try {
 
+  try {
     const cities = action.payload;
 
     let citiesResponse: IWeatherData[] = [];
-
-    // const response: IWeatherResponse[] = yield all(cities.map(i => apply(api, api.get, [i])))
-
-    // const citiesResponse = response.map(i => i.data)
 
     for (let i = 0; i < cities.length; i++) {
       const response: IWeatherResponse = yield apply(api, api.get, [cities[i]])
@@ -33,7 +28,7 @@ export function* handlerWCRequest(action: IWeatherComparatorRequest) {
     })
 
   } catch (error) {
-    console.error();
+    console.error(error);
     yield put({
       type: A.WEATHER_COMPARATOR_FAILURE,
       payload: error,

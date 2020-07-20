@@ -9,11 +9,17 @@ interface ICityInputProps {
 }
 
 export const CityInput: React.FC<ICityInputProps> = ({
-  index, item, onChange, onClose
+  index,
+  item,
+  onChange,
+  onClose
 }) => {
+
   return (
     <div className={"input-field " + s.wrap}>
-      <button className="btn-floating btn-small waves-effect waves-light blue lighten-3" onClick={onClose(index)}>
+      <button
+        className="btn-floating btn-small waves-effect waves-light blue lighten-3"
+        onClick={onClose(index)}>
         <i role="button" className="material-icons">close</i>
       </button>
       <i className="material-icons prefix">location_on</i>

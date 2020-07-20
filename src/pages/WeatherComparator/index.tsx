@@ -1,19 +1,20 @@
 import React, { SyntheticEvent, ChangeEvent } from 'react'
-
 import { PropsFromRedux } from '../../containers/WeatherComparatorContainer'
 import { errorMsg } from '../../helpers/messages'
 import { ComparisonCard } from '../../components/ComparisonCard'
 import { WeatherCard } from '../../components/WeatherCard'
 import { CityInput } from '../../components/CityInput'
 import { ComparisonInfo } from '../../components/ComparisonInfo'
-import s from './index.module.scss'
 import { ErrorMessage } from '../../components/ErrorMessage'
+import s from './index.module.scss'
+import { LoadingThin } from '../../components/Loading'
 
 export const WeatherComparator: React.FC<PropsFromRedux> = ({
   data,
   getWeather,
   message,
   code,
+  isFetching,
 }) => {
 
   const [cities, setSities] = React.useState<[string, number][]>([['', 0], ['', 1]])
@@ -49,7 +50,7 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
     setKey(key + 1)
   }
 
-  const onClose = (i: number): (e: SyntheticEvent) => void => e => {
+  const onClose = (i: number): (e: SyntheticEvent) => void => () => {
     let arr = [...cities];
     arr.splice(i, 1);
     setSities(arr)
@@ -101,9 +102,15 @@ export const WeatherComparator: React.FC<PropsFromRedux> = ({
       </form>
 
       {data.length ?
-        <><ComparisonCard data={data} />
-          <div className={s.infoBlock}><ComparisonInfo data={data} /></div>
-        </> : null}
+        <>
+          <div className="animEl">
+            <ComparisonCard data={data} />
+          </div>
+          <div className={s.infoBlock + ' animEl'}><ComparisonInfo data={data} /></div>
+        </> :
+        isFetching ?
+          <div className={s.loading}><LoadingThin /></div> :
+          null}
 
       <div className={s.grid}>
         {data.map((item, index) => {

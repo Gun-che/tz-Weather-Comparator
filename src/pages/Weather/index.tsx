@@ -6,9 +6,8 @@ import { errorMsg } from '../../helpers/messages'
 import { HourlyForecast } from './components/HourlyForecast'
 import { LoadingThin } from '../../components/Loading'
 import { DailyForecast } from './components/DailyForecast'
-
-import s from './index.module.scss'
 import { ErrorMessage } from '../../components/ErrorMessage'
+import s from './index.module.scss'
 
 export const Weather: React.FC<PropsFromRedux> = ({
   getWeather,

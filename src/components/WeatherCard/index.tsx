@@ -1,9 +1,8 @@
 import React from 'react'
-import { IWeatherData } from '../../types/apiResponse'
-import s from './index.module.scss'
-import { weatherMsg } from '../../helpers/messages'
-import { baseIconUrl } from '../../helpers/api'
 import { withACapitalLetter } from '../../helpers/withACapitalLetter'
+import { baseIconUrl } from '../../helpers/api'
+import { IWeatherData } from '../../types/apiResponse'
+import { weatherMsg } from '../../helpers/messages'
 
 export const WeatherCard: React.FC<{ data: IWeatherData }> = ({
   data: {
@@ -19,7 +18,7 @@ export const WeatherCard: React.FC<{ data: IWeatherData }> = ({
 
   return (
 
-    <div className={s.card + ' card'}>
+    <div className="card">
       <div className="card-image waves-effect waves-block waves-light">
         <img alt={description} className="activator" src={`${baseIconUrl}${icon}@4x.png`} />
       </div>

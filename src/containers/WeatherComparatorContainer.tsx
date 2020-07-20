@@ -28,6 +28,7 @@ export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
   message,
   code,
 }) => {
+
   return (
     <div>
       <WeatherComparator
@@ -40,6 +41,5 @@ export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
     </div>
   )
 }
-
 
 export default connector(WeatherContainer)
