@@ -44,12 +44,12 @@ export function* watchWeatherRequest() {
   yield takeEvery(A.WEATHER_REQUEST, handlerWeatherRequest)
 }
 
-interface IWeatherResponse {
+export interface IWeatherResponse {
   status: number;
   data: IWeatherData;
 }
 
-interface IAllWeatherResponse {
+export interface IAllWeatherResponse {
   status: number;
   data: IAllWeatherData;
 }
