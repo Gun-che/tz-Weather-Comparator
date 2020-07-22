@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react'
 import s from './index.module.scss'
 
-interface ICityInputProps {
+export interface ICityInputProps {
   index: number;
   onChange(e: React.ChangeEvent<HTMLInputElement & { dataset: { index: number } }>): void;
   item: [string, number];
