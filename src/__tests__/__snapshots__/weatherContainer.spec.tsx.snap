@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather container Weather container init renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`Weather container Weather container loading renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`Weather container Weather container render <Weather> renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`Weather container Weather container render <Weather> renders properly 2`] = `ShallowWrapper {}`;
+
+exports[`Weather container Weather container render <Weather> renders properly 3`] = `ShallowWrapper {}`;
+
+exports[`Weather container Weather container with error renders properly 1`] = `ShallowWrapper {}`;

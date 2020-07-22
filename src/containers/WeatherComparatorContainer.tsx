@@ -21,7 +21,7 @@ const connector = connect(mapStateToProps, mapDispatchToProps)
 
 export type PropsFromRedux = ConnectedProps<typeof connector>
 
-export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
+export const WeatherComparatorContainer: React.FC<ConnectedProps<typeof connector>> = ({
   getWeather,
   data,
   isFetching,
@@ -42,4 +42,4 @@ export const WeatherContainer: React.FC<ConnectedProps<typeof connector>> = ({
   )
 }
 
-export default connector(WeatherContainer)
+export default connector(WeatherComparatorContainer)
