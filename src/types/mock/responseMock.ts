@@ -4,7 +4,7 @@ export const weatherDataMock: IWeatherData = {
   name: '1',
   visibility: 1,
   weather: [{
-    id: 1,
+    id: 800,
     icon: '1',
     description: '1',
   }],
