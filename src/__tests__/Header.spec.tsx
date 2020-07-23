@@ -11,7 +11,7 @@ describe('Header component', () => {
     })
 
     it('render <Link>', () => {
-      expect(header.find('Link')).toHaveLength(6)
+      expect(header.find('Link')).toHaveLength(7)
     })
 
     it('renders inner <i>', () => {

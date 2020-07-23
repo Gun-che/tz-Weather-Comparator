@@ -6,9 +6,9 @@ exports[`Header component Header component render renders properly 1`] = `
     <div
       className="nav-wrapper blue lighten-3"
     >
-      <a
+      <Link
         className="brand-logo p-1"
-        href="/"
+        to="/"
       >
         <i
           className="large material-icons"
@@ -16,7 +16,7 @@ exports[`Header component Header component render renders properly 1`] = `
           ac_unit
         </i>
         WC
-      </a>
+      </Link>
       <a
         className="sidenav-trigger"
         data-target="mobile"
