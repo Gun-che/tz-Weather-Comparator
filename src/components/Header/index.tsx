@@ -7,8 +7,8 @@ export const Header: React.FC = () => {
     <header>
       <nav>
         <div className="nav-wrapper blue lighten-3">
-          <a href="/" className="brand-logo p-1">
-            <i className="large material-icons">ac_unit</i>WC</a>
+          <Link to={process.env.PUBLIC_URL + "/"} className="brand-logo p-1">
+            <i className="large material-icons">ac_unit</i>WC</Link>
           <a role="button" href="/" data-target="mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><Link to={process.env.PUBLIC_URL + "/"}>Home</Link></li>
