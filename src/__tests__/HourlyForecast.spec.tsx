@@ -11,10 +11,6 @@ describe('Hourly Forecast component', () => {
   describe('hourlyForecast component render', () => {
     const hourlyForecast = shallow(<HourlyForecast {...props} />)
 
-    it('renders properly', () => {
-      expect(hourlyForecast).toMatchSnapshot()
-    })
-
     it('render forecast item', () => {
       expect(hourlyForecast.find('div.sec')).toHaveLength(props.data.length)
     })

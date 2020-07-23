@@ -1,3 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`comparisonInfo component comparisonInfo component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`comparisonInfo component comparisonInfo component render renders properly 1`] = `
+<div
+  className="wrap card blue lighten-2"
+>
+  <div
+    className="card-content white-text"
+  >
+    <span
+      className="title card-title"
+    >
+      Таблица сравнений
+    </span>
+    <div
+      className="body"
+    >
+      <div>
+        <p>
+          Теплее прочего: 
+          1
+        </p>
+        <p>
+          Холоднее прочего: 
+          1
+        </p>
+        <p>
+          Ветренее прочего: 
+          1
+        </p>
+        <p>
+          Наименее ветренно: 
+          1
+        </p>
+      </div>
+      <div>
+        <p>
+          Самая высокая влажность: 
+          1
+        </p>
+        <p>
+          Суше прочего: 
+          1
+        </p>
+        <p>
+          В следующих городах нет дождя: 
+           1,
+           1,
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,9 +1,346 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeatherComparatorPage component WeatherComparatorPage component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`WeatherComparatorPage component WeatherComparatorPage render renders properly 1`] = `
+<div
+  className="wrap two containerCust"
+>
+  <div
+    className="message"
+  >
+    <h2>
+      Введите названия городов, погоду в которых вы хотите сравнить
+    </h2>
+    <ErrorMessage
+      message=""
+    />
+  </div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      key="0"
+    >
+      <CityInput
+        index={0}
+        item={
+          Array [
+            "",
+            0,
+          ]
+        }
+        onChange={[Function]}
+        onClose={[Function]}
+      />
+    </div>
+    <div
+      key="1"
+    >
+      <CityInput
+        index={1}
+        item={
+          Array [
+            "",
+            1,
+          ]
+        }
+        onChange={[Function]}
+        onClose={[Function]}
+      />
+    </div>
+    <div
+      className="btns"
+    >
+      <button
+        className="waves-effect waves-light btn blue lighten-3"
+        onClick={[Function]}
+        type="button"
+      >
+        <i
+          className="material-icons left"
+        >
+          add_location
+        </i>
+        Add location
+      </button>
+      <button
+        className="waves-effect waves-light btn blue lighten-3"
+        type="submit"
+      >
+        <i
+          className="material-icons left"
+        >
+          search
+        </i>
+        Search
+      </button>
+    </div>
+  </form>
+  <div
+    className="animEl"
+  >
+    <ComparisonCard
+      data={
+        Array [
+          Object {
+            "coord": Object {
+              "lat": 1,
+              "lon": 1,
+            },
+            "main": Object {
+              "feels_like": 1,
+              "humidity": 1,
+              "pressure": 1,
+              "temp": 1,
+            },
+            "name": "1",
+            "visibility": 1,
+            "weather": Array [
+              Object {
+                "description": "1",
+                "icon": "1",
+                "id": 800,
+              },
+            ],
+            "wind": Object {
+              "speed": 1,
+            },
+          },
+          Object {
+            "coord": Object {
+              "lat": 1,
+              "lon": 1,
+            },
+            "main": Object {
+              "feels_like": 1,
+              "humidity": 1,
+              "pressure": 1,
+              "temp": 1,
+            },
+            "name": "1",
+            "visibility": 1,
+            "weather": Array [
+              Object {
+                "description": "1",
+                "icon": "1",
+                "id": 800,
+              },
+            ],
+            "wind": Object {
+              "speed": 1,
+            },
+          },
+        ]
+      }
+    />
+  </div>
+  <div
+    className="infoBlock animEl"
+  >
+    <ComparisonInfo
+      data={
+        Array [
+          Object {
+            "coord": Object {
+              "lat": 1,
+              "lon": 1,
+            },
+            "main": Object {
+              "feels_like": 1,
+              "humidity": 1,
+              "pressure": 1,
+              "temp": 1,
+            },
+            "name": "1",
+            "visibility": 1,
+            "weather": Array [
+              Object {
+                "description": "1",
+                "icon": "1",
+                "id": 800,
+              },
+            ],
+            "wind": Object {
+              "speed": 1,
+            },
+          },
+          Object {
+            "coord": Object {
+              "lat": 1,
+              "lon": 1,
+            },
+            "main": Object {
+              "feels_like": 1,
+              "humidity": 1,
+              "pressure": 1,
+              "temp": 1,
+            },
+            "name": "1",
+            "visibility": 1,
+            "weather": Array [
+              Object {
+                "description": "1",
+                "icon": "1",
+                "id": 800,
+              },
+            ],
+            "wind": Object {
+              "speed": 1,
+            },
+          },
+        ]
+      }
+    />
+  </div>
+  <div
+    className="grid"
+  >
+    <div
+      key="0"
+    >
+      <WeatherCard
+        data={
+          Object {
+            "coord": Object {
+              "lat": 1,
+              "lon": 1,
+            },
+            "main": Object {
+              "feels_like": 1,
+              "humidity": 1,
+              "pressure": 1,
+              "temp": 1,
+            },
+            "name": "1",
+            "visibility": 1,
+            "weather": Array [
+              Object {
+                "description": "1",
+                "icon": "1",
+                "id": 800,
+              },
+            ],
+            "wind": Object {
+              "speed": 1,
+            },
+          }
+        }
+      />
+    </div>
+    <div
+      key="1"
+    >
+      <WeatherCard
+        data={
+          Object {
+            "coord": Object {
+              "lat": 1,
+              "lon": 1,
+            },
+            "main": Object {
+              "feels_like": 1,
+              "humidity": 1,
+              "pressure": 1,
+              "temp": 1,
+            },
+            "name": "1",
+            "visibility": 1,
+            "weather": Array [
+              Object {
+                "description": "1",
+                "icon": "1",
+                "id": 800,
+              },
+            ],
+            "wind": Object {
+              "speed": 1,
+            },
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
 
-exports[`WeatherComparatorPage component WeatherComparatorPage component render renders properly 2`] = `ShallowWrapper {}`;
-
-exports[`WeatherComparatorPage component WeatherComparatorPage render renders properly 1`] = `ShallowWrapper {}`;
-
-exports[`WeatherComparatorPage component WeatherComparatorPage render without data renders properly 1`] = `ShallowWrapper {}`;
+exports[`WeatherComparatorPage component WeatherComparatorPage render without data renders properly 1`] = `
+<div
+  className="wrap empty containerCust"
+>
+  <div
+    className="message"
+  >
+    <h2>
+      Введите названия городов, погоду в которых вы хотите сравнить
+    </h2>
+    <ErrorMessage
+      message=""
+    />
+  </div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      key="0"
+    >
+      <CityInput
+        index={0}
+        item={
+          Array [
+            "",
+            0,
+          ]
+        }
+        onChange={[Function]}
+        onClose={[Function]}
+      />
+    </div>
+    <div
+      key="1"
+    >
+      <CityInput
+        index={1}
+        item={
+          Array [
+            "",
+            1,
+          ]
+        }
+        onChange={[Function]}
+        onClose={[Function]}
+      />
+    </div>
+    <div
+      className="btns"
+    >
+      <button
+        className="waves-effect waves-light btn blue lighten-3"
+        onClick={[Function]}
+        type="button"
+      >
+        <i
+          className="material-icons left"
+        >
+          add_location
+        </i>
+        Add location
+      </button>
+      <button
+        className="waves-effect waves-light btn blue lighten-3"
+        type="submit"
+      >
+        <i
+          className="material-icons left"
+        >
+          search
+        </i>
+        Search
+      </button>
+    </div>
+  </form>
+  <div
+    className="grid"
+  />
+</div>
+`;

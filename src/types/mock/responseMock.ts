@@ -30,7 +30,7 @@ export const hourlyWeatherDataMock: IHourlyWeatherData = {
     description: '1',
   }],
   wind_speed: 1,
-  dt: 1,
+  dt: 111111111,
 }
 
 export const dailyWeatherDataMock: IDailyWeatherData = {
@@ -47,7 +47,7 @@ export const dailyWeatherDataMock: IDailyWeatherData = {
   sunset: 1,
   temp: { day: 1, night: 1, eve: 1, morn: 1 },
   wind_speed: 1,
-  dt: 1,
+  dt: 111111111,
 }
 
 export const allWeatherDataMock: IAllWeatherData = {

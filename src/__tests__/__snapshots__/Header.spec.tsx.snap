@@ -1,3 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component Header component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`Header component Header component render renders properly 1`] = `
+<header>
+  <nav>
+    <div
+      className="nav-wrapper blue lighten-3"
+    >
+      <a
+        className="brand-logo p-1"
+        href="/"
+      >
+        <i
+          className="large material-icons"
+        >
+          ac_unit
+        </i>
+        WC
+      </a>
+      <a
+        className="sidenav-trigger"
+        data-target="mobile"
+        href="/"
+        role="button"
+      >
+        <i
+          className="material-icons"
+        >
+          menu
+        </i>
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+        id="nav-mobile"
+      >
+        <li>
+          <Link
+            to="/"
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/weather"
+          >
+            Weather
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/wc"
+          >
+            Weather Comparator
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <ul
+    className="sidenav"
+    id="mobile"
+  >
+    <li>
+      <Link
+        to="/"
+      >
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/weather"
+      >
+        Weather
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/wc"
+      >
+        Weather Comparator
+      </Link>
+    </li>
+  </ul>
+</header>
+`;

@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`loading components loading full screen component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`loading components loading full screen component render renders properly 1`] = `
+<div
+  className="fullWrap animEl"
+>
+  <div
+    className="loader"
+    id="loading"
+  >
+    loading
+  </div>
+</div>
+`;
 
-exports[`loading components loading thin component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`loading components loading thin component render renders properly 1`] = `
+<div
+  className="wrap animEl"
+>
+  <div
+    className="loader"
+    id="loading"
+  >
+    loading
+  </div>
+</div>
+`;

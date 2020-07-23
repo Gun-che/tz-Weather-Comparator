@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`errorMessage component errorMessage component render with Error renders properly 1`] = `ShallowWrapper {}`;
+exports[`errorMessage component errorMessage component render with Error renders properly 1`] = `
+<Fragment>
+  <div
+    className="wrap containerCust"
+  >
+    <h2>
+      error
+    </h2>
+  </div>
+</Fragment>
+`;
 
-exports[`errorMessage component errorMessage component render without Error renders properly 1`] = `ShallowWrapper {}`;
+exports[`errorMessage component errorMessage component render without Error renders properly 1`] = `
+<Fragment>
+  <div
+    className="emptyWrap"
+  />
+</Fragment>
+`;

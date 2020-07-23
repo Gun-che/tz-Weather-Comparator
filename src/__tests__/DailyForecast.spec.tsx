@@ -11,10 +11,6 @@ describe('DailyForecast component', () => {
   describe('dailyForecast component render', () => {
     const dailyForecast = shallow(<DailyForecast {...props} />)
 
-    it('renders properly', () => {
-      expect(dailyForecast).toMatchSnapshot()
-    })
-
     it('render forecast item', () => {
       expect(dailyForecast.find('div.card-content')).toHaveLength(props.data.length)
     })
