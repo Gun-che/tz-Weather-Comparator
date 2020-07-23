@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherComparatorPage component WeatherComparatorPage component render renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`WeatherComparatorPage component WeatherComparatorPage component render renders properly 2`] = `ShallowWrapper {}`;
+
+exports[`WeatherComparatorPage component WeatherComparatorPage render renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`WeatherComparatorPage component WeatherComparatorPage render without data renders properly 1`] = `ShallowWrapper {}`;

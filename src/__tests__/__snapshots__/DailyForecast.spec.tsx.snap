@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DailyForecast component dailyForecast component render renders properly 1`] = `ShallowWrapper {}`;

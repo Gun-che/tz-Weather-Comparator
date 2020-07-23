@@ -25,7 +25,7 @@ export const hourlyWeatherDataMock: IHourlyWeatherData = {
   pressure: 1,
   temp: 1,
   weather: [{
-    id: 1,
+    id: 800,
     icon: '1',
     description: '1',
   }],
@@ -36,7 +36,7 @@ export const hourlyWeatherDataMock: IHourlyWeatherData = {
 export const dailyWeatherDataMock: IDailyWeatherData = {
   clouds: 10,
   weather: [{
-    id: 1,
+    id: 800,
     icon: '1',
     description: '1',
   }],

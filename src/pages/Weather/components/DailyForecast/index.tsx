@@ -25,7 +25,7 @@ export const DailyForecast: React.FC<{ data: IDailyWeatherData[], name: string }
           dt
         }) => {
 
-          const anotation = withACapitalLetter(weatherMsg[id]['ru'])
+          const anotation = weatherMsg[id] && withACapitalLetter(weatherMsg[id]['ru'])
           const date = dateFormater(dt)
 
           return (
