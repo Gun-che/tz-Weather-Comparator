@@ -10,7 +10,7 @@ export const HourlyForecast: React.FC<{ data: IHourlyWeatherData[], name: string
 
   return (
     <section className={s.pageWrap + ' animEl'}>
-      <h2>Прогноз на неделю в городе {name}</h2>
+      <h2>Почасовой прогноз на 2 дня в городе {name}</h2>
       <div className={s.wrap}>
 
         {data.map(({
