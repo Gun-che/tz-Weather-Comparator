@@ -1,3 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`weatherPage component weatherPage component render renders properly 1`] = `ReactWrapper {}`;
+exports[`weatherPage component weatherPage component render renders properly 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Weather
+      code={1}
+      daily={Array []}
+      data={Array []}
+      getWeather={[MockFunction]}
+      hourly={Array []}
+      isFetching={false}
+      message=""
+    >
+      <section
+        className="wrap containerCust"
+      >
+        <ErrorMessage
+          message=""
+        >
+          <div
+            className="emptyWrap"
+          />
+        </ErrorMessage>
+        <div
+          className="cw card-tabs tabs"
+        >
+          <ul
+            className="tabs"
+          >
+            <li
+              className="cw tab"
+            >
+              <Link
+                to="/weather"
+              >
+                <LinkAnchor
+                  href="/weather"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/weather"
+                    onClick={[Function]}
+                  >
+                    Текущая погода
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+            <li
+              className="hf tab"
+            >
+              <Link
+                to="/weather/hourly"
+              >
+                <LinkAnchor
+                  href="/weather/hourly"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/weather/hourly"
+                    onClick={[Function]}
+                  >
+                    Почасовой прогноз
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+            <li
+              className="df tab"
+            >
+              <Link
+                to="/weather/daily"
+              >
+                <LinkAnchor
+                  href="/weather/daily"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/weather/daily"
+                    onClick={[Function]}
+                  >
+                    Прогноз на неделю
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <form
+          className="form"
+          onSubmit={[Function]}
+        >
+          <div
+            className="input-field"
+          >
+            <input
+              className="validate"
+              id="search"
+              name="search"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+            <label
+              htmlFor="search"
+            >
+              Введите город
+            </label>
+          </div>
+          <button
+            className="waves-effect waves-light btn-floating blue lighten-3"
+            type="submit"
+          >
+            <i
+              className="material-icons left"
+            >
+              search
+            </i>
+          </button>
+        </form>
+        <Route
+          exact={true}
+          path="/weather"
+        />
+        <Route
+          path="/weather/hourly"
+        />
+        <Route
+          path="/weather/daily"
+        />
+      </section>
+    </Weather>
+  </Router>
+</BrowserRouter>
+`;

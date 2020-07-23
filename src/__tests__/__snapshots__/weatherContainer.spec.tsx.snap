@@ -1,13 +1,206 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Weather container Weather container init renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container init renders properly 1`] = `
+<div>
+  <Weather
+    code={1}
+    daily={Array []}
+    data={Array []}
+    getWeather={[MockFunction]}
+    hourly={Array []}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container loading renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container loading renders properly 1`] = `
+<div>
+  <Weather
+    code={1}
+    daily={Array []}
+    data={Array []}
+    getWeather={[MockFunction]}
+    hourly={Array []}
+    isFetching={true}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container render <Weather> renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container render <Weather> renders properly 1`] = `
+<div>
+  <Weather
+    code={1}
+    daily={Array []}
+    data={
+      Array [
+        Object {
+          "coord": Object {
+            "lat": 1,
+            "lon": 1,
+          },
+          "main": Object {
+            "feels_like": 1,
+            "humidity": 1,
+            "pressure": 1,
+            "temp": 1,
+          },
+          "name": "1",
+          "visibility": 1,
+          "weather": Array [
+            Object {
+              "description": "1",
+              "icon": "1",
+              "id": 800,
+            },
+          ],
+          "wind": Object {
+            "speed": 1,
+          },
+        },
+      ]
+    }
+    getWeather={[MockFunction]}
+    hourly={Array []}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container render <Weather> renders properly 2`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container render <Weather> renders properly 2`] = `
+<div>
+  <Weather
+    code={1}
+    daily={Array []}
+    data={Array []}
+    getWeather={[MockFunction]}
+    hourly={
+      Array [
+        Object {
+          "clouds": 1,
+          "dt": 1,
+          "feels_like": 1,
+          "humidity": 1,
+          "pressure": 1,
+          "temp": 1,
+          "weather": Array [
+            Object {
+              "description": "1",
+              "icon": "1",
+              "id": 800,
+            },
+          ],
+          "wind_speed": 1,
+        },
+        Object {
+          "clouds": 1,
+          "dt": 1,
+          "feels_like": 1,
+          "humidity": 1,
+          "pressure": 1,
+          "temp": 1,
+          "weather": Array [
+            Object {
+              "description": "1",
+              "icon": "1",
+              "id": 800,
+            },
+          ],
+          "wind_speed": 1,
+        },
+      ]
+    }
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container render <Weather> renders properly 3`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container render <Weather> renders properly 3`] = `
+<div>
+  <Weather
+    code={1}
+    daily={
+      Array [
+        Object {
+          "clouds": 10,
+          "dt": 1,
+          "feels_like": Object {
+            "day": 1,
+            "eve": 1,
+            "morn": 1,
+            "night": 1,
+          },
+          "humidity": 1,
+          "pressure": 10,
+          "sunrise": 1,
+          "sunset": 1,
+          "temp": Object {
+            "day": 1,
+            "eve": 1,
+            "morn": 1,
+            "night": 1,
+          },
+          "weather": Array [
+            Object {
+              "description": "1",
+              "icon": "1",
+              "id": 800,
+            },
+          ],
+          "wind_speed": 1,
+        },
+        Object {
+          "clouds": 10,
+          "dt": 1,
+          "feels_like": Object {
+            "day": 1,
+            "eve": 1,
+            "morn": 1,
+            "night": 1,
+          },
+          "humidity": 1,
+          "pressure": 10,
+          "sunrise": 1,
+          "sunset": 1,
+          "temp": Object {
+            "day": 1,
+            "eve": 1,
+            "morn": 1,
+            "night": 1,
+          },
+          "weather": Array [
+            Object {
+              "description": "1",
+              "icon": "1",
+              "id": 800,
+            },
+          ],
+          "wind_speed": 1,
+        },
+      ]
+    }
+    data={Array []}
+    getWeather={[MockFunction]}
+    hourly={Array []}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container with error renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container with error renders properly 1`] = `
+<div>
+  <Weather
+    code={1}
+    daily={Array []}
+    data={Array []}
+    getWeather={[MockFunction]}
+    hourly={Array []}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;

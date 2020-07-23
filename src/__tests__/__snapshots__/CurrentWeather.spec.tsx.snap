@@ -1,3 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`currentWeather component currentWeather component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`currentWeather component currentWeather component render renders properly 1`] = `
+<div
+  className="wrap animEl"
+>
+  <h2>
+    Погода в населенном пункте 
+    1
+  </h2>
+  <div
+    className="info"
+  >
+    <h3>
+      Температура: 
+      1
+      °C по ощущениям: 
+      1
+      °C
+    </h3>
+    <h4>
+      Безоблачно
+    </h4>
+    <div
+      className="grid"
+    >
+      <div
+        className="sec"
+      >
+        <p>
+          Ветер: 
+          1
+          м/с
+        </p>
+        <p>
+          Давление: 
+          1
+          гПа
+        </p>
+      </div>
+      <div
+        className="sec"
+      >
+        <p>
+          Влажность: 
+          1
+          %
+        </p>
+        <p>
+          Видимость: 
+          1
+          м
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="img"
+  >
+    <img
+      alt=""
+      src="http://openweathermap.org/img/wn/1@4x.png"
+    />
+  </div>
+</div>
+`;

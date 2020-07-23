@@ -1,3 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`weatherCard component weatherCard component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`weatherCard component weatherCard component render renders properly 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-image waves-effect waves-block waves-light"
+  >
+    <img
+      alt="1"
+      className="activator"
+      src="http://openweathermap.org/img/wn/1@4x.png"
+    />
+  </div>
+  <div
+    className="card-content"
+  >
+    <span
+      className="card-title activator grey-text text-darken-4"
+    >
+      1
+      <i
+        className="material-icons right"
+      >
+        more_vert
+      </i>
+    </span>
+    <p>
+      1
+      °C по ощущениям: 
+      1
+      °C
+    </p>
+  </div>
+  <div
+    className="card-reveal"
+  >
+    <span
+      className="card-title grey-text text-darken-4"
+    >
+      1
+      <i
+        className="material-icons right"
+      >
+        close
+      </i>
+    </span>
+    <p>
+      Безоблачно
+    </p>
+    <p>
+      1
+      °C по ощущениям: 
+      1
+      °C
+    </p>
+    <p>
+      Ветер: 
+      1
+      м/с
+    </p>
+    <p>
+      Влажность: 
+      1
+      %
+    </p>
+    <p>
+      Давление: 
+      1
+      гПа
+    </p>
+    <p>
+      Видимость: 
+      1
+      м
+    </p>
+  </div>
+</div>
+`;

@@ -1,3 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`home component home component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`home component home component render renders properly 1`] = `
+<section
+  className="wrap containerCust"
+>
+  <h2>
+    Weather Comparator
+  </h2>
+  <ul>
+    <h3>
+      Cтек технологий, используемых для разработки:
+    </h3>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      TypeScript
+    </li>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      React, Redux, Redux-saga, React-router
+    </li>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      CSS-библиотека Materialize
+    </li>
+  </ul>
+  <p>
+    Использован 
+    <a
+      href="https://openweathermap.org/api"
+    >
+      OpenWeather API
+    </a>
+  </p>
+  <ul>
+    <h3>
+      На странице вы можете:
+    </h3>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      Узнать текущую погоду
+    </li>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      Посмотреть почасовой прогноз на 2 дня
+    </li>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      Посмотреть посуточный прогнеоз на неделю
+    </li>
+    <li>
+      <i
+        className="material-icons"
+      >
+        flash_on
+      </i>
+      Сравнить погоду между 2 и более локациями во вкладке "Weather Comparator"
+    </li>
+  </ul>
+</section>
+`;

@@ -1,3 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`News component News component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`News component News component render renders properly 1`] = `
+<div>
+  <div
+    className="card"
+  >
+    <div
+      className="card-image"
+    >
+      <img
+        alt="sky"
+        src="wp.jpg"
+      />
+      <span
+        className="card-title"
+      >
+        1
+         cамый тёплый город, из выбранных вами!
+      </span>
+    </div>
+    <div
+      className="card-content"
+    >
+      <p>
+        Температура здесь сегодня 
+        1°C!
+      </p>
+      <p>
+        По ощущениям 
+        1°C
+      </p>
+    </div>
+  </div>
+</div>
+`;

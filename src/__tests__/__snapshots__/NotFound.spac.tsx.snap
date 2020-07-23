@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`loading components loading thin component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`loading components loading thin component render renders properly 1`] = `
+<Fragment>
+  <div
+    className="wrap containerCust"
+  >
+    404
+    <h3>
+      not found
+    </h3>
+  </div>
+</Fragment>
+`;

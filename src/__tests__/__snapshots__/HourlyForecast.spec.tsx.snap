@@ -1,3 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hourly Forecast component hourlyForecast component render renders properly 1`] = `ShallowWrapper {}`;
+exports[`Hourly Forecast component hourlyForecast component render renders properly 1`] = `
+<section
+  className="pageWrap animEl"
+>
+  <h2>
+    Почасовой прогноз на 2 дня в городе 
+    moscow
+  </h2>
+  <div
+    className="wrap"
+  >
+    <div
+      className="h3 sec"
+      key="1"
+    >
+      <div>
+        <p
+          className="time"
+        >
+          03:00
+        </p>
+        <p
+          className="date"
+        >
+          1 ├F3: M01┤
+        </p>
+      </div>
+      <div
+        className="img"
+      >
+        <img
+          alt="1"
+          src="http://openweathermap.org/img/wn/1.png"
+          title="Безоблачно"
+        />
+      </div>
+      <div
+        className="temp"
+      >
+        <div
+          className=""
+        >
+          <i
+            className="material-icons"
+          >
+            flare
+          </i>
+          1
+          °C
+        </div>
+        <div>
+          <i
+            className="material-icons"
+          >
+            navigate_next
+          </i>
+          1
+          м/с
+        </div>
+      </div>
+    </div>
+    <div
+      className="h3 sec"
+      key="1"
+    >
+      <div>
+        <p
+          className="time"
+        >
+          03:00
+        </p>
+        <p
+          className="date"
+        >
+          1 ├F3: M01┤
+        </p>
+      </div>
+      <div
+        className="img"
+      >
+        <img
+          alt="1"
+          src="http://openweathermap.org/img/wn/1.png"
+          title="Безоблачно"
+        />
+      </div>
+      <div
+        className="temp"
+      >
+        <div
+          className=""
+        >
+          <i
+            className="material-icons"
+          >
+            flare
+          </i>
+          1
+          °C
+        </div>
+        <div>
+          <i
+            className="material-icons"
+          >
+            navigate_next
+          </i>
+          1
+          м/с
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

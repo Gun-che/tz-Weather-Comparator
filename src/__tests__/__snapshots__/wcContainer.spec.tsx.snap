@@ -1,9 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Weather container Weather container init renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container init renders properly 1`] = `
+<div>
+  <WeatherComparator
+    code={1}
+    data={Array []}
+    getWeather={[MockFunction]}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container loading renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container loading renders properly 1`] = `
+<div>
+  <WeatherComparator
+    code={1}
+    data={Array []}
+    getWeather={[MockFunction]}
+    isFetching={true}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container render <Weather> renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container render <Weather> renders properly 1`] = `
+<div>
+  <WeatherComparator
+    code={1}
+    data={
+      Array [
+        Object {
+          "coord": Object {
+            "lat": 1,
+            "lon": 1,
+          },
+          "main": Object {
+            "feels_like": 1,
+            "humidity": 1,
+            "pressure": 1,
+            "temp": 1,
+          },
+          "name": "1",
+          "visibility": 1,
+          "weather": Array [
+            Object {
+              "description": "1",
+              "icon": "1",
+              "id": 800,
+            },
+          ],
+          "wind": Object {
+            "speed": 1,
+          },
+        },
+      ]
+    }
+    getWeather={[MockFunction]}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
 
-exports[`Weather container Weather container with error renders properly 1`] = `ShallowWrapper {}`;
+exports[`Weather container Weather container with error renders properly 1`] = `
+<div>
+  <WeatherComparator
+    code={1}
+    data={Array []}
+    getWeather={[MockFunction]}
+    isFetching={false}
+    message="1"
+  />
+</div>
+`;
