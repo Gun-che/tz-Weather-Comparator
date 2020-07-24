@@ -1,0 +1,2 @@
+(this["webpackJsonpweather-comparator"]=this["webpackJsonpweather-comparator"]||[]).push([[6],{100:function(t,e,n){"use strict";n.r(e),n.d(e,"NotFound",(function(){return c}));var a=n(0),r=n.n(a),o=n(94),u=n.n(o),c=function(){return r.a.createElement(r.a.Fragment,null,r.a.createElement("div",{className:u.a.wrap+" containerCust"},"404",r.a.createElement("h3",null,"not found")))};e.default=c},94:function(t,e,n){t.exports={wrap:"NotFound_wrap__dgChi"}}}]);
+//# sourceMappingURL=6.e51b0ca4.chunk.js.map

@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/tz-Weather-Comparator/static/css/main.bccf0d1a.chunk.css",
+    "main.js": "/tz-Weather-Comparator/static/js/main.c869179f.chunk.js",
+    "main.js.map": "/tz-Weather-Comparator/static/js/main.c869179f.chunk.js.map",
+    "runtime-main.js": "/tz-Weather-Comparator/static/js/runtime-main.5a99ed48.js",
+    "runtime-main.js.map": "/tz-Weather-Comparator/static/js/runtime-main.5a99ed48.js.map",
+    "static/js/2.44e29444.chunk.js": "/tz-Weather-Comparator/static/js/2.44e29444.chunk.js",
+    "static/js/2.44e29444.chunk.js.map": "/tz-Weather-Comparator/static/js/2.44e29444.chunk.js.map",
+    "static/css/3.9393e030.chunk.css": "/tz-Weather-Comparator/static/css/3.9393e030.chunk.css",
+    "static/js/3.cfc1d9c3.chunk.js": "/tz-Weather-Comparator/static/js/3.cfc1d9c3.chunk.js",
+    "static/js/3.cfc1d9c3.chunk.js.map": "/tz-Weather-Comparator/static/js/3.cfc1d9c3.chunk.js.map",
+    "static/css/4.96bbd3f0.chunk.css": "/tz-Weather-Comparator/static/css/4.96bbd3f0.chunk.css",
+    "static/js/4.2f137c52.chunk.js": "/tz-Weather-Comparator/static/js/4.2f137c52.chunk.js",
+    "static/js/4.2f137c52.chunk.js.map": "/tz-Weather-Comparator/static/js/4.2f137c52.chunk.js.map",
+    "static/css/5.a4e94678.chunk.css": "/tz-Weather-Comparator/static/css/5.a4e94678.chunk.css",
+    "static/js/5.e07ffb0f.chunk.js": "/tz-Weather-Comparator/static/js/5.e07ffb0f.chunk.js",
+    "static/js/5.e07ffb0f.chunk.js.map": "/tz-Weather-Comparator/static/js/5.e07ffb0f.chunk.js.map",
+    "static/css/6.a4a4d30b.chunk.css": "/tz-Weather-Comparator/static/css/6.a4a4d30b.chunk.css",
+    "static/js/6.e51b0ca4.chunk.js": "/tz-Weather-Comparator/static/js/6.e51b0ca4.chunk.js",
+    "static/js/6.e51b0ca4.chunk.js.map": "/tz-Weather-Comparator/static/js/6.e51b0ca4.chunk.js.map",
+    "index.html": "/tz-Weather-Comparator/index.html",
+    "precache-manifest.e54d66c07bfd55790423da862e791e38.js": "/tz-Weather-Comparator/precache-manifest.e54d66c07bfd55790423da862e791e38.js",
+    "service-worker.js": "/tz-Weather-Comparator/service-worker.js",
+    "static/css/3.9393e030.chunk.css.map": "/tz-Weather-Comparator/static/css/3.9393e030.chunk.css.map",
+    "static/css/4.96bbd3f0.chunk.css.map": "/tz-Weather-Comparator/static/css/4.96bbd3f0.chunk.css.map",
+    "static/css/5.a4e94678.chunk.css.map": "/tz-Weather-Comparator/static/css/5.a4e94678.chunk.css.map",
+    "static/css/6.a4a4d30b.chunk.css.map": "/tz-Weather-Comparator/static/css/6.a4a4d30b.chunk.css.map",
+    "static/css/main.bccf0d1a.chunk.css.map": "/tz-Weather-Comparator/static/css/main.bccf0d1a.chunk.css.map",
+    "static/js/2.44e29444.chunk.js.LICENSE.txt": "/tz-Weather-Comparator/static/js/2.44e29444.chunk.js.LICENSE.txt",
+    "static/media/wp.jpg": "/tz-Weather-Comparator/static/media/wp.cad581ec.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a99ed48.js",
+    "static/js/2.44e29444.chunk.js",
+    "static/css/main.bccf0d1a.chunk.css",
+    "static/js/main.c869179f.chunk.js"
+  ]
+}
