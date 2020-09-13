@@ -2,7 +2,7 @@ import { IWeatherData } from "./apiResponse";
 
 export interface IAction {
   type: string;
-  payload?: object;
+  payload?: any;
 }
 
 export interface IWeatherRequestArgs {

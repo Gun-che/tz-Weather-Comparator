@@ -2,19 +2,11 @@ import axios, { AxiosInstance } from 'axios'
 
 export const baseIconUrl = 'http://openweathermap.org/img/wn/';
 
-interface IApi {
-  get(city: string): Promise<any>,
-  getAll(coord: { lat: number, lon: number }): Promise<any>,
-  baseUrl: string,
-  _tmp: AxiosInstance,
-  key: string,
-}
+class Api {
+  baseUrl: string = 'https://api.openweathermap.org/data/2.5/';
+  key: string = process.env.REACT_APP_OPEN_WEATHER_KEY || '7155342732aa29bc9d0c9f5cd5e4554b';
 
-class Api implements IApi {
-  baseUrl = 'https://api.openweathermap.org/data/2.5/';
-  key = process.env.REACT_APP_OPEN_WEATHER_KEY || '7155342732aa29bc9d0c9f5cd5e4554b';
-
-  _tmp = axios.create({
+  _tmp: AxiosInstance = axios.create({
     baseURL: this.baseUrl,
     responseType: 'json',
   })
@@ -28,4 +20,4 @@ class Api implements IApi {
   }
 }
 
-export const api: IApi = new Api();
+export const api: Api = new Api();

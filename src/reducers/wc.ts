@@ -1,3 +1,4 @@
+import { IAction } from './../types/actions';
 import * as A from '../actions/wc'
 import { IWCState } from '../types/state'
 
@@ -11,7 +12,7 @@ export const initState: IWCState = {
 
 export function weatherComparatorReducer(
   state: IWCState = initState,
-  action: any
+  action: IAction
 ): IWCState {
 
   switch (action.type) {
