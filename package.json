@@ -16,7 +16,7 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
     "@types/redux-logger": "^3.0.8",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "history": "^4.10.1",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
